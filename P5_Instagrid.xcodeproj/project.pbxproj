@@ -12,6 +12,7 @@
 		710FA5951F88254C00BB3CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710FA5931F88254C00BB3CBF /* Main.storyboard */; };
 		710FA5971F88254C00BB3CBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 710FA5961F88254C00BB3CBF /* Assets.xcassets */; };
 		710FA59A1F88254C00BB3CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710FA5981F88254C00BB3CBF /* LaunchScreen.storyboard */; };
+		71CD55AE1F8829BD005122D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CD55AD1F8829BD005122D8 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		710FA5961F88254C00BB3CBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		710FA5991F88254C00BB3CBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		710FA59B1F88254C00BB3CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71CD55AB1F882907005122D8 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThirstySoftRegular.otf; path = ../../../Polices/ThirstySoftRegular.otf; sourceTree = "<group>"; };
+		71CD55AC1F882907005122D8 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Medium.otf"; path = "../../../Polices/Delm-Medium.otf"; sourceTree = "<group>"; };
+		71CD55AD1F8829BD005122D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 		710FA5831F88254C00BB3CBF = {
 			isa = PBXGroup;
 			children = (
+				71CD55AD1F8829BD005122D8 /* Default-568h@2x.png */,
 				710FA58E1F88254C00BB3CBF /* P5_Instagrid */,
 				710FA58D1F88254C00BB3CBF /* Products */,
 			);
@@ -81,6 +86,8 @@
 		71CD55AA1F8826D3005122D8 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				71CD55AC1F882907005122D8 /* Delm-Medium.otf */,
+				71CD55AB1F882907005122D8 /* ThirstySoftRegular.otf */,
 				710FA58F1F88254C00BB3CBF /* AppDelegate.swift */,
 				710FA5961F88254C00BB3CBF /* Assets.xcassets */,
 				710FA59B1F88254C00BB3CBF /* Info.plist */,
@@ -148,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				710FA59A1F88254C00BB3CBF /* LaunchScreen.storyboard in Resources */,
+				71CD55AE1F8829BD005122D8 /* Default-568h@2x.png in Resources */,
 				710FA5971F88254C00BB3CBF /* Assets.xcassets in Resources */,
 				710FA5951F88254C00BB3CBF /* Main.storyboard in Resources */,
 			);
