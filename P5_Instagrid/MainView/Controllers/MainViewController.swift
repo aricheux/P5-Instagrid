@@ -44,6 +44,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             return
         }
         buttonTag = button.tag
+        
     }
     
     // Choice the photo's disposition
