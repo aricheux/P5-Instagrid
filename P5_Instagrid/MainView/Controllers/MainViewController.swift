@@ -68,6 +68,8 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         plusButton[buttonTag-10].imageView?.contentMode = .scaleAspectFit
         plusButton[buttonTag-10].setImage(pickerImage , for: .normal)
         
+        photoContainer.createDisposition(disposition: dispositionIndex)
+        
         dismiss(animated: true)
     }
 

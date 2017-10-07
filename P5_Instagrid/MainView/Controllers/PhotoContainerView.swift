@@ -21,7 +21,6 @@ class PhotoContainerView: UIView {
         switch disposition {
         case 0:
             plusButton[0].frame = CGRect(origin: CGPoint(x:margin, y:margin), size: CGSize(width: doubleSide, height: side))
-            plusButton[0].imageView?.frame.origin = CGPoint(x: (doubleSide - plusButton[0].imageView!.bounds.width)/2.0, y: (side-plusButton[0].imageView!.frame.width)/2.0)
             plusButton[1].isHidden = true
             plusButton[2].frame = CGRect(origin: CGPoint(x:margin, y: side + margin*2), size: CGSize(width: side, height: side))
             plusButton[3].frame = CGRect(origin: CGPoint(x:side + margin*2, y:side + margin*2), size: CGSize(width: side, height: side))
@@ -32,7 +31,6 @@ class PhotoContainerView: UIView {
             plusButton[1].frame = CGRect(origin: CGPoint(x:side + margin*2,y:margin), size: CGSize(width: side, height: side))
             plusButton[1].isHidden = false
             plusButton[2].frame = CGRect(origin: CGPoint(x:margin,y:side + margin*2), size: CGSize(width: doubleSide, height: side))
-            plusButton[2].imageView?.frame.origin = CGPoint(x: (doubleSide - plusButton[2].imageView!.bounds.width)/2.0, y: (side-plusButton[0].imageView!.frame.width)/2.0)
             plusButton[3].isHidden = true
             
         case 2:
