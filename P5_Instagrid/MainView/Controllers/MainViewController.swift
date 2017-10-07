@@ -65,12 +65,14 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
  
         let pickerImage = info[UIImagePickerControllerOriginalImage] as? UIImage
-        plusButton[buttonTag-10].imageView?.contentMode = .scaleAspectFit
-        plusButton[buttonTag-10].setImage(pickerImage , for: .normal)
-        
+
+        let senderButton = plusButton[buttonTag-10]
+        senderButton.imageView?.contentMode = .scaleAspectFit
+        senderButton.setImage(pickerImage , for: .normal)
+
         photoContainer.createDisposition(disposition: dispositionIndex)
         
-        dismiss(animated: true)
+        picker.dismiss(animated: true)
     }
 
     // Choice the photo's disposition
@@ -79,8 +81,8 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             return
         }
         
-        for dispo in dispositionSelected {
-            dispo.isHidden = true
+        for dispositionSelected in dispositionSelected {
+            dispositionSelected.isHidden = true
         }
         
         dispositionIndex = button.tag
