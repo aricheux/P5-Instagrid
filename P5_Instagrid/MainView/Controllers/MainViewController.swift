@@ -7,16 +7,20 @@
 //
 
 import UIKit
+import Photos
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var photoContainer: PhotoContainerView!
     @IBOutlet var dispositionSelected: [UIImageView]!
+    @IBOutlet var plusButton: [UIButton]!
     
-    var dispositionIndex: Int = 0
-    
+    var dispositionIndex = 0
+    var buttonTag = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         dispositionIndex = 2
         dispositionSelected[dispositionIndex].isHidden = false
         photoContainer.createDisposition(disposition: dispositionIndex)
@@ -39,6 +43,7 @@ class MainViewController: UIViewController {
         guard let button = sender as? UIButton else {
             return
         }
+        buttonTag = button.tag
     }
     
     // Choice the photo's disposition
@@ -56,6 +61,6 @@ class MainViewController: UIViewController {
         photoContainer.createDisposition(disposition: button.tag)
         
     }
-
+    
 }
 

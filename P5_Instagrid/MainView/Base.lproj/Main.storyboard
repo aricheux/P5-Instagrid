@@ -170,6 +170,10 @@
                         <outletCollection property="dispositionSelected" destination="iGC-kU-5cy" collectionClass="NSMutableArray" id="23P-Ej-zN9"/>
                         <outletCollection property="dispositionSelected" destination="PA0-8R-efp" collectionClass="NSMutableArray" id="bgb-68-DbD"/>
                         <outletCollection property="dispositionSelected" destination="Mc7-qd-rUO" collectionClass="NSMutableArray" id="BQw-hG-0Ke"/>
+                        <outletCollection property="plusButton" destination="ZMA-mA-9um" collectionClass="NSMutableArray" id="ysU-9l-EWH"/>
+                        <outletCollection property="plusButton" destination="duQ-Va-DD0" collectionClass="NSMutableArray" id="al7-lv-HlH"/>
+                        <outletCollection property="plusButton" destination="yZ7-YG-jPg" collectionClass="NSMutableArray" id="Xp9-FH-Oac"/>
+                        <outletCollection property="plusButton" destination="a1H-NT-g2o" collectionClass="NSMutableArray" id="dC3-G2-jqJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
