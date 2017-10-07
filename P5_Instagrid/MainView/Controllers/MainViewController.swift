@@ -45,8 +45,32 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
         buttonTag = button.tag
         
+        // Library authorization
+        let libraryAuthorization = PHPhotoLibrary.authorizationStatus()
+        if libraryAuthorization == .notDetermined {
+            PHPhotoLibrary.requestAuthorization({status in
+                if status == .authorized{
+                    self.selectPhoto(sender)
+                }
+            })
+        } else if libraryAuthorization == .authorized {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
     }
-    
+
+    @objc func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+ 
+        let pickerImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        plusButton[buttonTag-10].imageView?.contentMode = .scaleAspectFit
+        plusButton[buttonTag-10].setImage(pickerImage , for: .normal)
+        
+        dismiss(animated: true)
+    }
+
     // Choice the photo's disposition
     @IBAction func selectDisposition(_ sender: Any) {
         guard let button = sender as? UIButton else {
