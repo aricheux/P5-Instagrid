@@ -12,7 +12,6 @@
 		710FA5951F88254C00BB3CBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710FA5931F88254C00BB3CBF /* Main.storyboard */; };
 		710FA5971F88254C00BB3CBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 710FA5961F88254C00BB3CBF /* Assets.xcassets */; };
 		710FA59A1F88254C00BB3CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710FA5981F88254C00BB3CBF /* LaunchScreen.storyboard */; };
-		71CD55AE1F8829BD005122D8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71CD55AD1F8829BD005122D8 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +24,6 @@
 		710FA59B1F88254C00BB3CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71CD55AB1F882907005122D8 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThirstySoftRegular.otf; path = ../../../Polices/ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		71CD55AC1F882907005122D8 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Medium.otf"; path = "../../../Polices/Delm-Medium.otf"; sourceTree = "<group>"; };
-		71CD55AD1F8829BD005122D8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +40,6 @@
 		710FA5831F88254C00BB3CBF = {
 			isa = PBXGroup;
 			children = (
-				71CD55AD1F8829BD005122D8 /* Default-568h@2x.png */,
 				710FA58E1F88254C00BB3CBF /* P5_Instagrid */,
 				710FA58D1F88254C00BB3CBF /* Products */,
 			);
@@ -155,7 +152,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				710FA59A1F88254C00BB3CBF /* LaunchScreen.storyboard in Resources */,
-				71CD55AE1F8829BD005122D8 /* Default-568h@2x.png in Resources */,
 				710FA5971F88254C00BB3CBF /* Assets.xcassets in Resources */,
 				710FA5951F88254C00BB3CBF /* Main.storyboard in Resources */,
 			);
@@ -308,7 +304,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
-				INFOPLIST_FILE = P5_Instagrid/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/P5_Instagrid/Ressources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aricheux.P5-Instagrid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -323,7 +319,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q6R42C3K2F;
-				INFOPLIST_FILE = P5_Instagrid/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/P5_Instagrid/Ressources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aricheux.P5-Instagrid";
 				PRODUCT_NAME = "$(TARGET_NAME)";
