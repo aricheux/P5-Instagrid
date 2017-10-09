@@ -28,6 +28,7 @@ class PhotoContainerView: UIView {
             
         case 1:
             plusButton[0].frame = CGRect(origin: CGPoint(x:margin,y:margin), size: CGSize(width: side, height: side))
+            plusButton[0].frame = buttonFrameImageAdded(button: plusButton[0])
             plusButton[1].frame = CGRect(origin: CGPoint(x:side + margin*2,y:margin), size: CGSize(width: side, height: side))
             plusButton[1].isHidden = false
             plusButton[2].frame = CGRect(origin: CGPoint(x:margin,y:side + margin*2), size: CGSize(width: doubleSide, height: side))
@@ -67,31 +68,30 @@ class PhotoContainerView: UIView {
         }
     }
     
-    func addImageToButton(_ image: UIImage, _ button: UIButton) {
+    public func addImageToButton(_ image: UIImage, _ button: UIButton) {
         button.setImage(image, for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
-        print(button.frame)
-        let newButtonFrame = buttonFrameImageAdded(button: button)
-        button.frame = newButtonFrame
-        print(button.frame)
+        button.frame = buttonFrameImageAdded(button: button)
     }
    
-    func buttonFrameImageAdded(button: UIButton) -> CGRect {
-        
+    private func buttonFrameImageAdded(button: UIButton) -> CGRect {
         if let buttonView = button.imageView, let buttonImg = button.imageView?.image {
             let widthRatio = buttonView.bounds.size.width / buttonImg.size.width;
             let heightRatio = buttonView.bounds.size.height / buttonImg.size.height;
-            let scale = min(widthRatio, heightRatio);
-            let imageWidth = round(scale * buttonImg.size.width);
-            let imageHeight = round(scale * buttonImg.size.height);
+            let scale = min(widthRatio, heightRatio).roundThreeDecimal()
             
-            let imageOriginX = (button.frame.size.height - imageWidth) / 2 + button.frame.origin.x
-            let imageOriginY = (button.frame.size.width - imageHeight) / 2 + button.frame.origin.y
+            let newWidth = scale * buttonImg.size.width;
+            let newHeight = scale * buttonImg.size.height;
+            let newButtonSize = CGSize(width: newWidth, height: newHeight)
+            
+            let newOriginX = (button.frame.size.width - newWidth) / 2 + button.frame.origin.x
+            let newOriginY = (button.frame.size.height - newHeight) / 2 + button.frame.origin.y
+            let newButtonOrigin = CGPoint(x: newOriginX, y: newOriginY)
 
-            return CGRect(x: imageOriginX, y:imageOriginY, width: imageWidth, height: imageHeight)
+            return CGRect(origin: newButtonOrigin, size: newButtonSize)
         }
         
-        return CGRect()
+        return button.frame
     }
     
 }
