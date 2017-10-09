@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>L&apos;accès à vos photos permet de créer vos montages photos</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Delm-Medium.otf</string>

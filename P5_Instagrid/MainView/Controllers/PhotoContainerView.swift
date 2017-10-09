@@ -67,4 +67,31 @@ class PhotoContainerView: UIView {
         }
     }
     
+    func addImageToButton(_ image: UIImage, _ button: UIButton) {
+        button.setImage(image, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        print(button.frame)
+        let newButtonFrame = buttonFrameImageAdded(button: button)
+        button.frame = newButtonFrame
+        print(button.frame)
+    }
+   
+    func buttonFrameImageAdded(button: UIButton) -> CGRect {
+        
+        if let buttonView = button.imageView, let buttonImg = button.imageView?.image {
+            let widthRatio = buttonView.bounds.size.width / buttonImg.size.width;
+            let heightRatio = buttonView.bounds.size.height / buttonImg.size.height;
+            let scale = min(widthRatio, heightRatio);
+            let imageWidth = round(scale * buttonImg.size.width);
+            let imageHeight = round(scale * buttonImg.size.height);
+            
+            let imageOriginX = (button.frame.size.height - imageWidth) / 2 + button.frame.origin.x
+            let imageOriginY = (button.frame.size.width - imageHeight) / 2 + button.frame.origin.y
+
+            return CGRect(x: imageOriginX, y:imageOriginY, width: imageWidth, height: imageHeight)
+        }
+        
+        return CGRect()
+    }
+    
 }

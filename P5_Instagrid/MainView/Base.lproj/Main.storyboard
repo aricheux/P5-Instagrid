@@ -62,7 +62,7 @@
                                             <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PbO-AJ-f1Y"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMA-mA-9um" userLabel="Button1">
+                                    <button opaque="NO" tag="10" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMA-mA-9um" userLabel="Button1">
                                         <rect key="frame" x="15" y="15" width="128" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
