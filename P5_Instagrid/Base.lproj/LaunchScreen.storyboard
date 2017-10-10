@@ -5,9 +5,15 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="ThirstySoftRegular.otf">
+            <string>ThirstySoftRegular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -18,25 +24,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="backgroundLauch" translatesAutoresizingMaskIntoConstraints="NO" id="y4W-dH-qM0">
-                                <rect key="frame" x="-20" y="-34.5" width="414" height="736"/>
+                                <rect key="frame" x="-20" y="-35" width="414" height="736"/>
                             </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="iconLauch" translatesAutoresizingMaskIntoConstraints="NO" id="q7k-6H-zx7">
-                                <rect key="frame" x="62" y="207.5" width="251" height="252"/>
+                                <rect key="frame" x="62" y="208" width="251" height="252"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMX-Gb-JCh">
+                                <rect key="frame" x="16" y="62" width="343" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="ptH-8j-aQD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="y4W-dH-qM0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5F1-CI-Psi"/>
+                            <constraint firstItem="AMX-Gb-JCh" firstAttribute="centerX" secondItem="q7k-6H-zx7" secondAttribute="centerX" id="6Gn-7F-1jI"/>
+                            <constraint firstItem="AMX-Gb-JCh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="Aib-2i-jX1"/>
                             <constraint firstItem="q7k-6H-zx7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eKY-xf-1Le"/>
                             <constraint firstItem="y4W-dH-qM0" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="pNF-5A-0Yj"/>
                             <constraint firstItem="q7k-6H-zx7" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="qQG-f5-M9f"/>
+                            <constraint firstItem="AMX-Gb-JCh" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="xus-fL-c5F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>

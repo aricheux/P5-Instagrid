@@ -59,6 +59,8 @@ class PhotoContainerView: UIView {
         default:
             print("Anything But Portrait")
         }
+        
+        self.reloadInputViews()
     }
  
 }

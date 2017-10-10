@@ -18,10 +18,13 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(self.photoContainer.frame)
         
         self.photoContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
         self.dispositionContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
-        
+        print("ok")
+        print(self.photoContainer.frame)
+        self.viewDidLayoutSubviews()
         dispositionIndex = 2
         dispositionContainer.changeDisposition(disposition: dispositionIndex)
         photoContainer.createDisposition(disposition: dispositionIndex)

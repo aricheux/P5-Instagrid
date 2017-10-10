@@ -95,18 +95,8 @@
                                     <outletCollection property="plusButton" destination="a1H-NT-g2o" collectionClass="NSMutableArray" id="mop-p3-jRA"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fI-WY-UFF">
-                                <rect key="frame" x="16" y="20" width="343" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="kRZ-DI-QdQ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OHX-Hi-Foi" customClass="DispositionContainerView" customModule="P5_Instagrid" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OHX-Hi-Foi" customClass="DispositionContainerView" customModule="P5_Instagrid" customModuleProvider="target">
                                 <rect key="frame" x="37" y="507" width="300" height="160"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQl-fC-QBI" userLabel="Disposition1">
                                         <rect key="frame" x="0.0" y="40" width="80" height="80"/>
@@ -155,14 +145,27 @@
                                     <outletCollection property="dispositionButton" destination="wEp-PY-O6D" collectionClass="NSMutableArray" id="Qqk-CQ-3Jt"/>
                                 </connections>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4E4-Am-DS5">
+                                <rect key="frame" x="16" y="20" width="343" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="f7t-vl-urd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.71767544750000001" green="0.84264773130000004" blue="0.89722675090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1fI-WY-UFF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1aF-RT-QLG"/>
-                            <constraint firstItem="1fI-WY-UFF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OZg-Dr-vy7"/>
-                            <constraint firstItem="1fI-WY-UFF" firstAttribute="centerX" secondItem="bRZ-kw-R6s" secondAttribute="centerX" id="Rep-M6-IRd"/>
+                            <constraint firstItem="4E4-Am-DS5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0eS-8O-QMR"/>
+                            <constraint firstItem="OHX-Hi-Foi" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0jK-Vr-K7J"/>
                             <constraint firstItem="bRZ-kw-R6s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TOF-IA-Pf2"/>
+                            <constraint firstItem="OHX-Hi-Foi" firstAttribute="leading" secondItem="bRZ-kw-R6s" secondAttribute="leading" id="Wvh-qI-Mxw"/>
+                            <constraint firstItem="4E4-Am-DS5" firstAttribute="centerX" secondItem="bRZ-kw-R6s" secondAttribute="centerX" id="ZjS-Y2-Mfd"/>
                             <constraint firstItem="bRZ-kw-R6s" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fXs-OJ-506"/>
+                            <constraint firstItem="OHX-Hi-Foi" firstAttribute="top" secondItem="bRZ-kw-R6s" secondAttribute="bottom" constant="24" id="fqq-WT-HEA"/>
+                            <constraint firstItem="4E4-Am-DS5" firstAttribute="centerX" secondItem="OHX-Hi-Foi" secondAttribute="centerX" id="iWR-Kr-zaJ"/>
+                            <constraint firstItem="4E4-Am-DS5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oCM-g3-owO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
