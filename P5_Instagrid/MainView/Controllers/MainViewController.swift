@@ -13,15 +13,17 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var photoContainer: PhotoContainerView!
     @IBOutlet weak var dispositionContainer: DispositionContainerView!
-    @IBOutlet var dispositionSelected: [UIImageView]!
     
     var dispositionIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.photoContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
+        self.dispositionContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
+        
         dispositionIndex = 2
-        dispositionSelected[dispositionIndex].isHidden = false
+        dispositionContainer.changeDisposition(disposition: dispositionIndex)
         photoContainer.createDisposition(disposition: dispositionIndex)
     }
     
@@ -73,14 +75,9 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         guard let button = sender as? UIButton else {
             return
         }
-        
-        for dispositionSelected in dispositionSelected {
-            dispositionSelected.isHidden = true
-        }
-        
         dispositionIndex = button.tag
-        dispositionSelected[button.tag].isHidden = false
-        photoContainer.createDisposition(disposition: button.tag)
+        dispositionContainer.changeDisposition(disposition: dispositionIndex)
+        photoContainer.createDisposition(disposition: dispositionIndex)
     }
     
 }

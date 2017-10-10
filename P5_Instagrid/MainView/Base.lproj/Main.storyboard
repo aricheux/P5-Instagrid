@@ -105,11 +105,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OHX-Hi-Foi" customClass="DispositionContainerView" customModule="P5_Instagrid" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="507" width="375" height="160"/>
+                                <rect key="frame" x="37" y="507" width="300" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQl-fC-QBI" userLabel="Disposition1">
-                                        <rect key="frame" x="42" y="40" width="80" height="80"/>
+                                        <rect key="frame" x="0.0" y="40" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="disposition1"/>
                                         <connections>
@@ -117,7 +117,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pln-ET-txd" userLabel="Disposition2">
-                                        <rect key="frame" x="147" y="40" width="80" height="80"/>
+                                        <rect key="frame" x="109" y="40" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="disposition3"/>
                                         <connections>
@@ -125,7 +125,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEp-PY-O6D" userLabel="Disposition3">
-                                        <rect key="frame" x="253" y="40" width="80" height="80"/>
+                                        <rect key="frame" x="220" y="40" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="disposition2"/>
                                         <connections>
@@ -133,19 +133,27 @@
                                         </connections>
                                     </button>
                                     <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="iGC-kU-5cy" userLabel="Selected1">
-                                        <rect key="frame" x="42" y="40" width="82" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="PA0-8R-efp" userLabel="Selected2">
-                                        <rect key="frame" x="146" y="40" width="82" height="80"/>
+                                        <rect key="frame" x="0.0" y="40" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="Mc7-qd-rUO" userLabel="Selected3">
-                                        <rect key="frame" x="253" y="40" width="80" height="80"/>
+                                        <rect key="frame" x="220" y="40" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="PA0-8R-efp" userLabel="Selected2">
+                                        <rect key="frame" x="109" y="40" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outletCollection property="dispositionSelected" destination="iGC-kU-5cy" collectionClass="NSMutableArray" id="s5M-PX-p1C"/>
+                                    <outletCollection property="dispositionSelected" destination="PA0-8R-efp" collectionClass="NSMutableArray" id="29S-Yj-7IC"/>
+                                    <outletCollection property="dispositionSelected" destination="Mc7-qd-rUO" collectionClass="NSMutableArray" id="oev-4f-4dx"/>
+                                    <outletCollection property="dispositionButton" destination="VQl-fC-QBI" collectionClass="NSMutableArray" id="8dh-9O-Bpk"/>
+                                    <outletCollection property="dispositionButton" destination="pln-ET-txd" collectionClass="NSMutableArray" id="6qp-0W-cyn"/>
+                                    <outletCollection property="dispositionButton" destination="wEp-PY-O6D" collectionClass="NSMutableArray" id="Qqk-CQ-3Jt"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.71767544750000001" green="0.84264773130000004" blue="0.89722675090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -161,9 +169,6 @@
                     <connections>
                         <outlet property="dispositionContainer" destination="OHX-Hi-Foi" id="pMQ-DO-IvW"/>
                         <outlet property="photoContainer" destination="bRZ-kw-R6s" id="Xba-6X-81J"/>
-                        <outletCollection property="dispositionSelected" destination="iGC-kU-5cy" collectionClass="NSMutableArray" id="23P-Ej-zN9"/>
-                        <outletCollection property="dispositionSelected" destination="PA0-8R-efp" collectionClass="NSMutableArray" id="bgb-68-DbD"/>
-                        <outletCollection property="dispositionSelected" destination="Mc7-qd-rUO" collectionClass="NSMutableArray" id="BQw-hG-0Ke"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

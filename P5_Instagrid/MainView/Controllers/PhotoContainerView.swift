@@ -44,16 +44,17 @@ class PhotoContainerView: UIView {
     public func resizeView(orientation: UIInterfaceOrientation, screenBounds: CGRect){
         let minSide = min(screenBounds.height, screenBounds.width)
         let maxSide = max(screenBounds.height, screenBounds.width)
-        let xMargin = minSide * 0.15
-        let normalSide = (minSide - 2*xMargin)
-        let yMargin = (maxSide - normalSide) / 2
+        let marginX = minSide * 0.1
+        let side = (minSide - 2*marginX)
+        let marginYportrait = (maxSide - side) * 0.5
+        let marginYlandscape = (minSide - side) * 0.75
         
         switch orientation {
         case .portrait:
-            self.frame = CGRect(origin: CGPoint(x: xMargin, y: yMargin), size: CGSize(width: normalSide, height: normalSide))
+            self.frame = CGRect(origin: CGPoint(x: marginX, y: marginYportrait), size: CGSize(width: side, height: side))
             
         case .landscapeLeft,.landscapeRight :
-            self.frame = CGRect(origin: CGPoint(x: yMargin, y: xMargin), size: CGSize(width: normalSide, height: normalSide))
+            self.frame = CGRect(origin: CGPoint(x: marginYportrait, y: marginYlandscape), size: CGSize(width: side, height: side))
             
         default:
             print("Anything But Portrait")
