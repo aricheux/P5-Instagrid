@@ -34,24 +34,22 @@ class PhotoContainerView: UIView {
     }
     
     public func addImageToButton(_ image: UIImage, buttonTag: Int) {
-        let button = plusButton[buttonTag-10]
-        
-        button.imageIsAdded = false
-        button.setImage(image, for: .normal)
-        button.imageIsAdded = true
+        plusButton[buttonTag - 10].imageIsAdded = false
+        plusButton[buttonTag - 10].setImage(image, for: .normal)
+        plusButton[buttonTag - 10].imageIsAdded = true
     }
     
     public func resizeView(orientation: UIInterfaceOrientation, screenBounds: CGRect){
         let minSide = min(screenBounds.height, screenBounds.width)
         let maxSide = max(screenBounds.height, screenBounds.width)
-        let marginX = minSide * 0.1
-        let side = (minSide - 2*marginX)
+        let margin = minSide * 0.1
+        let side = (minSide - margin * 2)
         let marginYportrait = (maxSide - side) * 0.5
         let marginYlandscape = (minSide - side) * 0.75
         
         switch orientation {
         case .portrait:
-            self.frame = CGRect(origin: CGPoint(x: marginX, y: marginYportrait), size: CGSize(width: side, height: side))
+            self.frame = CGRect(origin: CGPoint(x: margin, y: marginYportrait), size: CGSize(width: side, height: side))
             
         case .landscapeLeft,.landscapeRight :
             self.frame = CGRect(origin: CGPoint(x: marginYportrait, y: marginYlandscape), size: CGSize(width: side, height: side))

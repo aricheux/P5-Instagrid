@@ -35,12 +35,11 @@ class PhotoButtonView: UIButton {
         
         if let containerView = self.superview {
             let margin = containerView.frame.size.height * 0.05
-            let side = (containerView.frame.size.width - (3*margin)) / 2
-            let marginPlusButton = side + 2*margin
-            
+            let side = (containerView.frame.size.width - (margin * 3)) / 2
+
             var sizeButton = CGSize(width: side, height: side)
             if size == .long {
-                sizeButton = CGSize(width: 2*side + margin, height: side)
+                sizeButton = CGSize(width: side*2 + margin, height: side)
             }
             
             var originButton = CGPoint()
@@ -48,11 +47,11 @@ class PhotoButtonView: UIButton {
             case .topLeft:
                 originButton = CGPoint(x: margin, y: margin)
             case .topRight:
-                originButton = CGPoint(x: marginPlusButton, y: margin)
+                originButton = CGPoint(x: side + margin * 2, y: margin)
             case .bottomLeft:
-                originButton = CGPoint(x: margin, y: marginPlusButton)
+                originButton = CGPoint(x: margin, y: side + margin * 2)
             case .bottomRight:
-                originButton = CGPoint(x: marginPlusButton, y: marginPlusButton)
+                originButton = CGPoint(x: side + margin * 2, y: side + margin * 2)
             }
             
             self.frame = CGRect(origin: originButton, size: sizeButton)
@@ -81,13 +80,12 @@ class PhotoButtonView: UIButton {
             
             self.frame = CGRect(origin: newButtonOrigin, size: newButtonSize)
         }
-
     }
 }
 
 extension CGFloat {
     /// Rounds the double to decimal places value
     func roundThreeDecimal() -> CGFloat {
-        return CGFloat(Darwin.round(1000*self)/1000)
+        return CGFloat(Darwin.round(1000 * self) / 1000)
     }
 }

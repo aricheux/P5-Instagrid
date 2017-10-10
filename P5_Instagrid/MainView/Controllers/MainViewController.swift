@@ -11,25 +11,24 @@ import Photos
 
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    // a view that contains the 4 buttons to add photos
     @IBOutlet weak var photoContainer: PhotoContainerView!
+    // a view that contains the 3 buttons to choice dispositions
     @IBOutlet weak var dispositionContainer: DispositionContainerView!
-    
+    // current diposition of the photomontage
     var dispositionIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.photoContainer.frame)
         
         self.photoContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
         self.dispositionContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
-        print("ok")
-        print(self.photoContainer.frame)
-        self.viewDidLayoutSubviews()
+        
         dispositionIndex = 2
         dispositionContainer.changeDisposition(disposition: dispositionIndex)
         photoContainer.createDisposition(disposition: dispositionIndex)
     }
-    
+
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
             self.photoContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
@@ -42,7 +41,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.viewWillTransition(to: size, with: coordinator)
     }
     
-    // Choice a photo from iphone
+    // Added photos from the user library's
     @IBAction func selectPhoto(_ sender: Any) {
         guard let button = sender as? UIButton else {
             return
@@ -65,7 +64,8 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
-
+    
+    // Add the image to the button when the action is done
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickerImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             photoContainer.addImageToButton(pickerImage, buttonTag: picker.view.tag)
@@ -73,7 +73,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
 
-    // Choice the photo's disposition
+    // Choice the photomontage disposition and change the frame of the view
     @IBAction func selectDisposition(_ sender: Any) {
         guard let button = sender as? UIButton else {
             return

@@ -14,6 +14,7 @@ class DispositionContainerView: UIView {
     @IBOutlet var dispositionButton: [UIButton]!
     
     public func changeDisposition(disposition: Int) {
+        
         for dispositionSelected in dispositionSelected {
             dispositionSelected.isHidden = true
         }
@@ -26,8 +27,8 @@ class DispositionContainerView: UIView {
         let maxSide = max(screenBounds.height, screenBounds.width)
         
         let buttonSide: CGFloat = 80.0
-        let margin = (minSide - buttonSide*3) / 4
-        let widht = buttonSide*3 + margin*2
+        let margin = (minSide - buttonSide * 3) / 4
+        let widht = buttonSide * 3 + margin * 2
         let marginYportrait = maxSide - margin - buttonSide
         let marginYlandscape = margin * 1.5
                 
@@ -36,15 +37,15 @@ class DispositionContainerView: UIView {
             self.frame = CGRect(origin: CGPoint(x: margin, y: marginYportrait), size: CGSize(width: widht, height: buttonSide))
             
             dispositionButton[0].frame.origin = CGPoint(x: 0, y: 0)
-            dispositionButton[1].frame.origin = CGPoint(x: buttonSide+margin, y: 0)
-            dispositionButton[2].frame.origin = CGPoint(x: (buttonSide+margin)*2, y: 0)
+            dispositionButton[1].frame.origin = CGPoint(x: buttonSide + margin, y: 0)
+            dispositionButton[2].frame.origin = CGPoint(x: (buttonSide + margin) * 2, y: 0)
 
         case .landscapeLeft,.landscapeRight :
             self.frame = CGRect(origin: CGPoint(x: marginYportrait, y: marginYlandscape), size: CGSize(width: buttonSide, height: widht))
             
             dispositionButton[0].frame.origin = CGPoint(x: 0, y: 0)
-            dispositionButton[1].frame.origin = CGPoint(x: 0, y: buttonSide+margin)
-            dispositionButton[2].frame.origin = CGPoint(x: 0, y: (buttonSide+margin)*2)
+            dispositionButton[1].frame.origin = CGPoint(x: 0, y: buttonSide + margin)
+            dispositionButton[2].frame.origin = CGPoint(x: 0, y: (buttonSide + margin) * 2)
             
         default:
             print("Anything But Portrait")
