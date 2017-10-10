@@ -12,10 +12,10 @@ import Photos
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var photoContainer: PhotoContainerView!
+    @IBOutlet weak var dispositionContainer: DispositionContainerView!
     @IBOutlet var dispositionSelected: [UIImageView]!
     
     var dispositionIndex = 0
-    var buttonTag = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
             self.photoContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
+            self.dispositionContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
             
         }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
             self.photoContainer.createDisposition(disposition: self.dispositionIndex)
@@ -41,8 +42,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         guard let button = sender as? UIButton else {
             return
         }
-        buttonTag = button.tag
-
+        
         // Library authorization
         let libraryAuthorization = PHPhotoLibrary.authorizationStatus()
         if libraryAuthorization == .notDetermined {
@@ -56,13 +56,14 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
             imagePicker.allowsEditing = false
+            imagePicker.view.tag = button.tag
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickerImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            photoContainer.addImageToButton(pickerImage, buttonTag: buttonTag)
+            photoContainer.addImageToButton(pickerImage, buttonTag: picker.view.tag)
             dismiss(animated: true)
         }
     }

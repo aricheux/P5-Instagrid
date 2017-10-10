@@ -104,68 +104,62 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQl-fC-QBI" userLabel="Disposition1">
-                                <rect key="frame" x="36" y="567" width="80" height="80"/>
-                                <state key="normal" image="disposition1"/>
-                                <connections>
-                                    <action selector="selectDisposition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lDn-VV-obX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pln-ET-txd" userLabel="Disposition2">
-                                <rect key="frame" x="148" y="567" width="80" height="80"/>
-                                <state key="normal" image="disposition3"/>
-                                <connections>
-                                    <action selector="selectDisposition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qVq-yV-ROX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEp-PY-O6D" userLabel="Disposition3">
-                                <rect key="frame" x="258" y="567" width="80" height="80"/>
-                                <state key="normal" image="disposition2"/>
-                                <connections>
-                                    <action selector="selectDisposition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ggf-uW-Xxn"/>
-                                </connections>
-                            </button>
-                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="iGC-kU-5cy" userLabel="Selected1">
-                                <rect key="frame" x="35" y="567" width="82" height="80"/>
-                            </imageView>
-                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="PA0-8R-efp" userLabel="Selected2">
-                                <rect key="frame" x="147" y="567" width="82" height="80"/>
-                            </imageView>
-                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="Mc7-qd-rUO" userLabel="Selected3">
-                                <rect key="frame" x="258" y="567" width="80" height="80"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OHX-Hi-Foi" customClass="DispositionContainerView" customModule="P5_Instagrid" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="507" width="375" height="160"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pln-ET-txd" userLabel="Disposition2">
+                                        <rect key="frame" x="147" y="0.0" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="disposition3"/>
+                                        <connections>
+                                            <action selector="selectDisposition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qVq-yV-ROX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEp-PY-O6D" userLabel="Disposition3">
+                                        <rect key="frame" x="253" y="0.0" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="disposition2"/>
+                                        <connections>
+                                            <action selector="selectDisposition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ggf-uW-Xxn"/>
+                                        </connections>
+                                    </button>
+                                    <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="PA0-8R-efp" userLabel="Selected2">
+                                        <rect key="frame" x="146" y="0.0" width="82" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="Mc7-qd-rUO" userLabel="Selected3">
+                                        <rect key="frame" x="253" y="0.0" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="iGC-kU-5cy" userLabel="Selected1">
+                                        <rect key="frame" x="40" y="0.0" width="82" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQl-fC-QBI" userLabel="Disposition1">
+                                        <rect key="frame" x="42" y="0.0" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="disposition1"/>
+                                        <connections>
+                                            <action selector="selectDisposition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lDn-VV-obX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.71767544750000001" green="0.84264773130000004" blue="0.89722675090000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1fI-WY-UFF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1aF-RT-QLG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iGC-kU-5cy" secondAttribute="bottom" constant="20" id="A1b-ww-aND"/>
-                            <constraint firstItem="iGC-kU-5cy" firstAttribute="leading" secondItem="VQl-fC-QBI" secondAttribute="leading" constant="-1" id="Fq9-kX-VWn"/>
-                            <constraint firstItem="VQl-fC-QBI" firstAttribute="top" secondItem="pln-ET-txd" secondAttribute="top" id="G1W-On-BPz"/>
-                            <constraint firstItem="pln-ET-txd" firstAttribute="top" secondItem="wEp-PY-O6D" secondAttribute="top" id="Hee-wO-5qV"/>
-                            <constraint firstItem="PA0-8R-efp" firstAttribute="leading" secondItem="iGC-kU-5cy" secondAttribute="trailing" constant="30" id="NVX-YJ-jjS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pln-ET-txd" secondAttribute="bottom" constant="20" id="Nvn-Z1-vsQ"/>
                             <constraint firstItem="1fI-WY-UFF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OZg-Dr-vy7"/>
-                            <constraint firstItem="pln-ET-txd" firstAttribute="leading" secondItem="iGC-kU-5cy" secondAttribute="trailing" constant="31" id="Qdc-hY-GtX"/>
                             <constraint firstItem="1fI-WY-UFF" firstAttribute="centerX" secondItem="bRZ-kw-R6s" secondAttribute="centerX" id="Rep-M6-IRd"/>
                             <constraint firstItem="bRZ-kw-R6s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TOF-IA-Pf2"/>
-                            <constraint firstItem="VQl-fC-QBI" firstAttribute="top" secondItem="bRZ-kw-R6s" secondAttribute="bottom" constant="84" id="V5x-PK-YKp"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PA0-8R-efp" secondAttribute="bottom" constant="20" id="Y9B-9s-Qnr"/>
-                            <constraint firstItem="iGC-kU-5cy" firstAttribute="top" secondItem="VQl-fC-QBI" secondAttribute="top" id="b4q-jr-rpm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mc7-qd-rUO" secondAttribute="bottom" constant="20" id="eIT-mu-PtO"/>
-                            <constraint firstItem="wEp-PY-O6D" firstAttribute="top" secondItem="Mc7-qd-rUO" secondAttribute="top" id="f0y-wB-TzB"/>
                             <constraint firstItem="bRZ-kw-R6s" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fXs-OJ-506"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wEp-PY-O6D" secondAttribute="bottom" constant="20" id="mRD-Z5-YuJ"/>
-                            <constraint firstItem="Mc7-qd-rUO" firstAttribute="leading" secondItem="wEp-PY-O6D" secondAttribute="leading" id="oOj-dY-2lM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VQl-fC-QBI" secondAttribute="bottom" constant="20" id="sN1-xL-I0k"/>
-                            <constraint firstItem="iGC-kU-5cy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="u49-lj-mgn"/>
-                            <constraint firstItem="pln-ET-txd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ueK-QE-BU5"/>
-                            <constraint firstItem="wEp-PY-O6D" firstAttribute="leading" secondItem="PA0-8R-efp" secondAttribute="trailing" constant="29" id="xDl-U7-bc2"/>
-                            <constraint firstItem="pln-ET-txd" firstAttribute="centerX" secondItem="PA0-8R-efp" secondAttribute="centerX" id="zui-sl-vG1"/>
-                            <constraint firstItem="PA0-8R-efp" firstAttribute="top" secondItem="pln-ET-txd" secondAttribute="top" id="zyV-3d-kAW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="dispositionContainer" destination="OHX-Hi-Foi" id="pMQ-DO-IvW"/>
                         <outlet property="photoContainer" destination="bRZ-kw-R6s" id="Xba-6X-81J"/>
                         <outletCollection property="dispositionSelected" destination="iGC-kU-5cy" collectionClass="NSMutableArray" id="23P-Ej-zN9"/>
                         <outletCollection property="dispositionSelected" destination="PA0-8R-efp" collectionClass="NSMutableArray" id="bgb-68-DbD"/>

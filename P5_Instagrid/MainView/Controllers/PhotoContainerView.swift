@@ -36,11 +36,12 @@ class PhotoContainerView: UIView {
     public func addImageToButton(_ image: UIImage, buttonTag: Int) {
         let button = plusButton[buttonTag-10]
         
+        button.imageIsAdded = false
         button.setImage(image, for: .normal)
         button.imageIsAdded = true
     }
     
-    func resizeView(orientation: UIInterfaceOrientation, screenBounds: CGRect){
+    public func resizeView(orientation: UIInterfaceOrientation, screenBounds: CGRect){
         let minSide = min(screenBounds.height, screenBounds.width)
         let maxSide = max(screenBounds.height, screenBounds.width)
         let xMargin = minSide * 0.15

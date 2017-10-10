@@ -22,6 +22,8 @@ class PhotoButtonView: UIButton {
         didSet {
             if imageIsAdded == true {
                 self.buttonFrameImageAdded()
+            } else {
+                self.initFrame(size: self.size)
             }
         }
     }
@@ -29,6 +31,8 @@ class PhotoButtonView: UIButton {
     var location: Location = .topLeft
     
     public func initFrame(size: Size) {
+        self.size = size
+        
         if let containerView = self.superview {
             let margin = containerView.frame.size.height * 0.05
             let side = (containerView.frame.size.width - (3*margin)) / 2
@@ -56,13 +60,9 @@ class PhotoButtonView: UIButton {
             if imageIsAdded {
                 self.buttonFrameImageAdded()
             }
-            
-            print("\(self.tag) \(location) \(self.frame)")
         }
     }
-    
 
-    
     private func buttonFrameImageAdded() {
         self.imageView?.contentMode = .scaleAspectFit
 
@@ -82,5 +82,12 @@ class PhotoButtonView: UIButton {
             self.frame = CGRect(origin: newButtonOrigin, size: newButtonSize)
         }
 
+    }
+}
+
+extension CGFloat {
+    /// Rounds the double to decimal places value
+    func roundThreeDecimal() -> CGFloat {
+        return CGFloat(Darwin.round(1000*self)/1000)
     }
 }
