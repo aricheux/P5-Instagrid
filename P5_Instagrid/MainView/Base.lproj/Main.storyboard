@@ -108,8 +108,16 @@
                                 <rect key="frame" x="0.0" y="507" width="375" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQl-fC-QBI" userLabel="Disposition1">
+                                        <rect key="frame" x="42" y="40" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="disposition1"/>
+                                        <connections>
+                                            <action selector="selectDisposition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lDn-VV-obX"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pln-ET-txd" userLabel="Disposition2">
-                                        <rect key="frame" x="147" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="147" y="40" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="disposition3"/>
                                         <connections>
@@ -117,33 +125,25 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEp-PY-O6D" userLabel="Disposition3">
-                                        <rect key="frame" x="253" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="253" y="40" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="disposition2"/>
                                         <connections>
                                             <action selector="selectDisposition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ggf-uW-Xxn"/>
                                         </connections>
                                     </button>
+                                    <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="iGC-kU-5cy" userLabel="Selected1">
+                                        <rect key="frame" x="42" y="40" width="82" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                     <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="PA0-8R-efp" userLabel="Selected2">
-                                        <rect key="frame" x="146" y="0.0" width="82" height="80"/>
+                                        <rect key="frame" x="146" y="40" width="82" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="Mc7-qd-rUO" userLabel="Selected3">
-                                        <rect key="frame" x="253" y="0.0" width="80" height="80"/>
+                                        <rect key="frame" x="253" y="40" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="iGC-kU-5cy" userLabel="Selected1">
-                                        <rect key="frame" x="40" y="0.0" width="82" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQl-fC-QBI" userLabel="Disposition1">
-                                        <rect key="frame" x="42" y="0.0" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="disposition1"/>
-                                        <connections>
-                                            <action selector="selectDisposition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lDn-VV-obX"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
