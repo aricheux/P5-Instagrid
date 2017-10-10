@@ -13,7 +13,6 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     @IBOutlet weak var photoContainer: PhotoContainerView!
     @IBOutlet var dispositionSelected: [UIImageView]!
-    @IBOutlet var plusButton: [UIButton]!
     
     var dispositionIndex = 0
     var buttonTag = 0
@@ -24,7 +23,6 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         dispositionIndex = 2
         dispositionSelected[dispositionIndex].isHidden = false
         photoContainer.createDisposition(disposition: dispositionIndex)
-        
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -44,7 +42,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             return
         }
         buttonTag = button.tag
-        
+
         // Library authorization
         let libraryAuthorization = PHPhotoLibrary.authorizationStatus()
         if libraryAuthorization == .notDetermined {
@@ -64,7 +62,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickerImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            photoContainer.addImageToButton(pickerImage, plusButton[buttonTag-10])
+            photoContainer.addImageToButton(pickerImage, buttonTag: buttonTag)
             dismiss(animated: true)
         }
     }
@@ -82,7 +80,6 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         dispositionIndex = button.tag
         dispositionSelected[button.tag].isHidden = false
         photoContainer.createDisposition(disposition: button.tag)
-        
     }
     
 }

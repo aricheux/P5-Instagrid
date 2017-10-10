@@ -14,6 +14,7 @@
 		710FA59A1F88254C00BB3CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710FA5981F88254C00BB3CBF /* LaunchScreen.storyboard */; };
 		71277C6B1F88C333006AC630 /* PhotoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71277C6A1F88C333006AC630 /* PhotoContainerView.swift */; };
 		71277C6F1F8C1D98006AC630 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71277C6E1F8C1D98006AC630 /* CGFloat.swift */; };
+		71277C711F8CA5DD006AC630 /* PhotoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71277C701F8CA5DD006AC630 /* PhotoButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		710FA59B1F88254C00BB3CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71277C6A1F88C333006AC630 /* PhotoContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoContainerView.swift; sourceTree = "<group>"; };
 		71277C6E1F8C1D98006AC630 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
+		71277C701F8CA5DD006AC630 /* PhotoButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoButtonView.swift; sourceTree = "<group>"; };
 		71CD55AB1F882907005122D8 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThirstySoftRegular.otf; path = ../../../Polices/ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		71CD55AC1F882907005122D8 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Medium.otf"; path = "../../../Polices/Delm-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 			children = (
 				710FA5911F88254C00BB3CBF /* MainViewController.swift */,
 				71277C6A1F88C333006AC630 /* PhotoContainerView.swift */,
+				71277C701F8CA5DD006AC630 /* PhotoButtonView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71277C711F8CA5DD006AC630 /* PhotoButtonView.swift in Sources */,
 				71277C6F1F8C1D98006AC630 /* CGFloat.swift in Sources */,
 				710FA5921F88254C00BB3CBF /* MainViewController.swift in Sources */,
 				71277C6B1F88C333006AC630 /* PhotoContainerView.swift in Sources */,

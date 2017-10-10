@@ -26,7 +26,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRZ-kw-R6s" customClass="PhotoContainerView" customModule="P5_Instagrid" customModuleProvider="target">
                                 <rect key="frame" x="37" y="183" width="300" height="300"/>
                                 <subviews>
-                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duQ-Va-DD0" userLabel="Button2">
+                                    <button opaque="NO" tag="10" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMA-mA-9um" userLabel="Button1" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
+                                        <rect key="frame" x="15" y="15" width="128" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="127.5" id="UTv-3m-XVt"/>
+                                            <constraint firstAttribute="height" constant="127.5" id="guF-5w-6Do"/>
+                                        </constraints>
+                                        <state key="normal" image="plusBlue"/>
+                                        <connections>
+                                            <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kbm-uT-rmG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duQ-Va-DD0" userLabel="Button2" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="157" y="15" width="128" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -38,7 +50,7 @@
                                             <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0BR-49-Odz"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZ7-YG-jPg" userLabel="Button3">
+                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZ7-YG-jPg" userLabel="Button3" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="15" y="157" width="128" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -50,7 +62,7 @@
                                             <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VW9-aj-riJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1H-NT-g2o" userLabel="Button4">
+                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1H-NT-g2o" userLabel="Button4" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="157" y="157" width="128" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -60,18 +72,6 @@
                                         <state key="normal" image="plusBlue"/>
                                         <connections>
                                             <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PbO-AJ-f1Y"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="10" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMA-mA-9um" userLabel="Button1">
-                                        <rect key="frame" x="15" y="15" width="128" height="128"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="127.5" id="UTv-3m-XVt"/>
-                                            <constraint firstAttribute="height" constant="127.5" id="guF-5w-6Do"/>
-                                        </constraints>
-                                        <state key="normal" image="plusBlue"/>
-                                        <connections>
-                                            <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kbm-uT-rmG"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -89,10 +89,10 @@
                                     <constraint firstAttribute="height" constant="300" id="xzG-dK-JWg"/>
                                 </constraints>
                                 <connections>
-                                    <outletCollection property="plusButton" destination="ZMA-mA-9um" collectionClass="NSMutableArray" id="LHx-yp-dzt"/>
-                                    <outletCollection property="plusButton" destination="duQ-Va-DD0" collectionClass="NSMutableArray" id="Udi-oJ-cBk"/>
-                                    <outletCollection property="plusButton" destination="yZ7-YG-jPg" collectionClass="NSMutableArray" id="1UT-bD-mZN"/>
-                                    <outletCollection property="plusButton" destination="a1H-NT-g2o" collectionClass="NSMutableArray" id="oMO-OX-fTx"/>
+                                    <outletCollection property="plusButton" destination="ZMA-mA-9um" collectionClass="NSMutableArray" id="Fnb-Og-JtQ"/>
+                                    <outletCollection property="plusButton" destination="duQ-Va-DD0" collectionClass="NSMutableArray" id="5wP-tN-amG"/>
+                                    <outletCollection property="plusButton" destination="yZ7-YG-jPg" collectionClass="NSMutableArray" id="1Fn-qU-yva"/>
+                                    <outletCollection property="plusButton" destination="a1H-NT-g2o" collectionClass="NSMutableArray" id="mop-p3-jRA"/>
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fI-WY-UFF">
@@ -170,10 +170,6 @@
                         <outletCollection property="dispositionSelected" destination="iGC-kU-5cy" collectionClass="NSMutableArray" id="23P-Ej-zN9"/>
                         <outletCollection property="dispositionSelected" destination="PA0-8R-efp" collectionClass="NSMutableArray" id="bgb-68-DbD"/>
                         <outletCollection property="dispositionSelected" destination="Mc7-qd-rUO" collectionClass="NSMutableArray" id="BQw-hG-0Ke"/>
-                        <outletCollection property="plusButton" destination="ZMA-mA-9um" collectionClass="NSMutableArray" id="ysU-9l-EWH"/>
-                        <outletCollection property="plusButton" destination="duQ-Va-DD0" collectionClass="NSMutableArray" id="al7-lv-HlH"/>
-                        <outletCollection property="plusButton" destination="yZ7-YG-jPg" collectionClass="NSMutableArray" id="Xp9-FH-Oac"/>
-                        <outletCollection property="plusButton" destination="a1H-NT-g2o" collectionClass="NSMutableArray" id="dC3-G2-jqJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
