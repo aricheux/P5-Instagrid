@@ -127,13 +127,15 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     private func sharePhoto() {
-        photoContainer.transform = .identity
 
         // set up activity view controller
         if let imageWithView = photoContainer.imageWithView() {
             let imageToShare = [imageWithView]
             let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
-            activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            activityViewController.completionWithItemsHandler = { (activity, success, items, error) in
+                    self.photoContainer.transform = .identity
+            }
             
             // exclude some activity types from the list (optional)
             activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
