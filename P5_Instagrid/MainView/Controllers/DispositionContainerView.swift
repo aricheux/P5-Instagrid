@@ -31,7 +31,7 @@ class DispositionContainerView: UIView {
         let widht = buttonSide * 3 + margin * 2
         let marginYportrait = maxSide - margin - buttonSide
         let marginYlandscape = margin * 1.5
-                
+                        
         switch orientation {
         case .portrait:
             self.frame = CGRect(origin: CGPoint(x: margin, y: marginYportrait), size: CGSize(width: widht, height: buttonSide))
@@ -48,13 +48,13 @@ class DispositionContainerView: UIView {
             dispositionButton[2].frame.origin = CGPoint(x: 0, y: (buttonSide + margin) * 2)
             
         default:
-            print("Anything But Portrait")
+            break
         }
         
         dispositionSelected[0].frame = dispositionButton[0].frame
         dispositionSelected[1].frame = dispositionButton[1].frame
         dispositionSelected[2].frame = dispositionButton[2].frame
-        
+               
     }
 
 }

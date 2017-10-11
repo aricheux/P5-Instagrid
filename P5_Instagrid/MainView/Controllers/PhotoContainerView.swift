@@ -34,9 +34,10 @@ class PhotoContainerView: UIView {
     }
     
     public func addImageToButton(_ image: UIImage, buttonTag: Int) {
-        plusButton[buttonTag - 10].imageIsAdded = false
         plusButton[buttonTag - 10].setImage(image, for: .normal)
-        plusButton[buttonTag - 10].imageIsAdded = true
+        plusButton[buttonTag - 10].imageView?.contentMode = .scaleAspectFill
+        plusButton[buttonTag - 10].imageView?.backgroundColor = .clear
+        print(plusButton[buttonTag - 10].frame)
     }
     
     public func resizeView(orientation: UIInterfaceOrientation, screenBounds: CGRect){
@@ -55,7 +56,7 @@ class PhotoContainerView: UIView {
             self.frame = CGRect(origin: CGPoint(x: marginYportrait, y: marginYlandscape), size: CGSize(width: side, height: side))
             
         default:
-            print("Anything But Portrait")
+            break
         }
         
         self.reloadInputViews()

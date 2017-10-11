@@ -78,6 +78,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         guard let button = sender as? UIButton else {
             return
         }
+        
         dispositionIndex = button.tag
         dispositionContainer.changeDisposition(disposition: dispositionIndex)
         photoContainer.createDisposition(disposition: dispositionIndex)

@@ -26,7 +26,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRZ-kw-R6s" customClass="PhotoContainerView" customModule="P5_Instagrid" customModuleProvider="target">
                                 <rect key="frame" x="37" y="183" width="300" height="300"/>
                                 <subviews>
-                                    <button opaque="NO" tag="10" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMA-mA-9um" userLabel="Button1" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
+                                    <button opaque="NO" tag="10" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMA-mA-9um" userLabel="Button1" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="15" y="15" width="128" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -38,7 +38,7 @@
                                             <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kbm-uT-rmG"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duQ-Va-DD0" userLabel="Button2" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
+                                    <button opaque="NO" tag="11" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duQ-Va-DD0" userLabel="Button2" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="157" y="15" width="128" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -50,7 +50,7 @@
                                             <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0BR-49-Odz"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZ7-YG-jPg" userLabel="Button3" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
+                                    <button opaque="NO" tag="12" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZ7-YG-jPg" userLabel="Button3" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="15" y="157" width="128" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -62,7 +62,7 @@
                                             <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VW9-aj-riJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1H-NT-g2o" userLabel="Button4" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
+                                    <button opaque="NO" tag="13" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1H-NT-g2o" userLabel="Button4" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="157" y="157" width="128" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
