@@ -21,6 +21,14 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeLeft.direction = .left
+        self.view.addGestureRecognizer(swipeLeft)
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeUp.direction = .up
+        self.view.addGestureRecognizer(swipeUp)
+        
         self.photoContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
         self.dispositionContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
         
@@ -84,5 +92,55 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         photoContainer.createDisposition(disposition: dispositionIndex)
     }
     
+    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+        let orientation = UIApplication.shared.statusBarOrientation
+        
+        if orientation == .portrait {
+            if gesture.direction == .up {
+                animateView(gesture.direction)
+            }
+        } else {
+            if gesture.direction == .left {
+                animateView(gesture.direction)
+            }
+        }
+    }
+    
+    private func animateView(_ direction: UISwipeGestureRecognizerDirection) {
+        let screenHeight = UIScreen.main.bounds.height
+        let screenWidth = UIScreen.main.bounds.width
+        var translationTransform: CGAffineTransform
+        
+        if direction == .up {
+            translationTransform = CGAffineTransform(translationX: 0, y: -screenHeight)
+        } else {
+            translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
+        }
+        
+        UIView.animate(withDuration: 1.0, animations: {
+            self.photoContainer.transform = translationTransform
+        }, completion: { (success) in
+            if success {
+                self.sharePhoto()
+            }
+        })
+    }
+    
+    private func sharePhoto() {
+        photoContainer.transform = .identity
+
+        // set up activity view controller
+        if let imageWithView = photoContainer.imageWithView() {
+            let imageToShare = [imageWithView]
+            let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+            
+            // exclude some activity types from the list (optional)
+            activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+            
+            // present the view controller
+            self.present(activityViewController, animated: true, completion: nil)
+        }
+    }
 }
 
