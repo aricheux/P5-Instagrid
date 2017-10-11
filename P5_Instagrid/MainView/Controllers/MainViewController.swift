@@ -17,7 +17,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var dispositionContainer: DispositionContainerView!
     // current diposition of the photomontage
     var dispositionIndex = 0
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +28,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         dispositionContainer.changeDisposition(disposition: dispositionIndex)
         photoContainer.createDisposition(disposition: dispositionIndex)
     }
-
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
             self.photoContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
@@ -72,7 +72,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             dismiss(animated: true)
         }
     }
-
+    
     // Choice the photomontage disposition and change the frame of the view
     @IBAction func selectDisposition(_ sender: Any) {
         guard let button = sender as? UIButton else {
