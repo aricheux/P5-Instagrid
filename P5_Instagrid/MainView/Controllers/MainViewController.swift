@@ -21,14 +21,6 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipeLeft.direction = .left
-        self.view.addGestureRecognizer(swipeLeft)
-        
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
-        swipeUp.direction = .up
-        self.view.addGestureRecognizer(swipeUp)
-        
         self.photoContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
         self.dispositionContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
         
@@ -91,21 +83,19 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         dispositionContainer.changeDisposition(disposition: dispositionIndex)
         photoContainer.createDisposition(disposition: dispositionIndex)
     }
-    
-    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
-        let orientation = UIApplication.shared.statusBarOrientation
-        
-        if orientation == .portrait {
-            if gesture.direction == .up {
-                animateView(gesture.direction)
-            }
-        } else {
-            if gesture.direction == .left {
-                animateView(gesture.direction)
-            }
+
+    @IBAction func swipeLeftDetected(_ sender: Any) {
+        if UIApplication.shared.statusBarOrientation == .portrait {
+            animateView((sender as! UISwipeGestureRecognizer).direction)
         }
     }
     
+    @IBAction func swipeUpDetected(_ sender: Any) {
+        if UIApplication.shared.statusBarOrientation != .portrait {
+            animateView((sender as! UISwipeGestureRecognizer).direction)
+        }
+    }
+
     private func animateView(_ direction: UISwipeGestureRecognizerDirection) {
         let screenHeight = UIScreen.main.bounds.height
         let screenWidth = UIScreen.main.bounds.width
