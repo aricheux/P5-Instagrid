@@ -84,15 +84,15 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         photoContainer.createDisposition(disposition: dispositionIndex)
     }
 
-    @IBAction func swipeLeftDetected(_ sender: Any) {
+    @IBAction func swipeUpDetected(_ sender: UISwipeGestureRecognizer) {
         if UIApplication.shared.statusBarOrientation == .portrait {
-            animateView((sender as! UISwipeGestureRecognizer).direction)
+            animateView(sender.direction)
         }
     }
     
-    @IBAction func swipeUpDetected(_ sender: Any) {
+    @IBAction func swipeLeftDetected(_ sender: UISwipeGestureRecognizer) {
         if UIApplication.shared.statusBarOrientation != .portrait {
-            animateView((sender as! UISwipeGestureRecognizer).direction)
+            animateView(sender.direction)
         }
     }
 
