@@ -14,31 +14,16 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     // a view that contains the 4 buttons to add photos
     @IBOutlet weak var photoContainer: PhotoContainerView!
     // a view that contains the 3 buttons to choice dispositions
-    @IBOutlet weak var dispositionContainer: DispositionContainerView!
+    @IBOutlet var dispositionSelected: [UIImageView]!
     // current diposition of the photomontage
     var dispositionIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.photoContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
-        self.dispositionContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
-        
         dispositionIndex = 2
-        dispositionContainer.changeDisposition(disposition: dispositionIndex)
+        dispositionSelected[dispositionIndex].isHidden = false
         photoContainer.createDisposition(disposition: dispositionIndex)
-    }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        coordinator.animate(alongsideTransition: { (UIViewControllerTransitionCoordinatorContext) -> Void in
-            self.photoContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
-            self.dispositionContainer.resizeView(orientation: UIApplication.shared.statusBarOrientation, screenBounds: UIScreen.main.bounds)
-            
-        }, completion: { (UIViewControllerTransitionCoordinatorContext) -> Void in
-            self.photoContainer.createDisposition(disposition: self.dispositionIndex)
-            
-        })
-        super.viewWillTransition(to: size, with: coordinator)
     }
     
     // Added photos from the user library's
@@ -79,9 +64,12 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             return
         }
         
-        dispositionIndex = button.tag
-        dispositionContainer.changeDisposition(disposition: dispositionIndex)
-        photoContainer.createDisposition(disposition: dispositionIndex)
+        for dispositionSelected in dispositionSelected {
+            dispositionSelected.isHidden = true
+        }
+        
+        dispositionSelected[button.tag].isHidden = false
+        photoContainer.createDisposition(disposition: button.tag)
     }
 
     @IBAction func swipeUpDetected(_ sender: UISwipeGestureRecognizer) {
