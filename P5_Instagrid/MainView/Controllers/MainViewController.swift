@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+
     // a view that contains the 4 buttons to add photos
     @IBOutlet weak var photoContainer: PhotoContainerView!
     // a view that contains the 3 buttons to choice dispositions
