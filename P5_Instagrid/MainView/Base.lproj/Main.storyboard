@@ -43,7 +43,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="7WT-Fv-zJB">
-                                <rect key="frame" x="200" y="148" width="15" height="10"/>
+                                <rect key="frame" x="199.66666666666666" y="148" width="15" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="ZuT-4m-lkT"/>
                                     <constraint firstAttribute="height" constant="10" id="t6N-C6-JJl"/>
