@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -23,24 +23,25 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="P5_Instagrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdI-Bf-pxs">
-                                <rect key="frame" x="20" y="221.33333333333334" width="335" height="31.666666666666657"/>
+                                <rect key="frame" x="0.0" y="191.66666666666666" width="218" height="31.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="7WT-Fv-zJB">
-                                <rect key="frame" x="180" y="201.33333333333334" width="15" height="10"/>
+                                <rect key="frame" x="93" y="173.66666666666666" width="15" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="ZuT-4m-lkT"/>
                                     <constraint firstAttribute="height" constant="10" id="t6N-C6-JJl"/>
                                 </constraints>
+                                <variation key="heightClass=compact" image="arrowLeft"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQl-fC-QBI" userLabel="Disposition1">
-                                <rect key="frame" x="37.666666666666657" y="678" width="80" height="80"/>
+                                <rect key="frame" x="636" y="57" width="80" height="80"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="f56-Me-56x"/>
@@ -52,7 +53,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pln-ET-txd" userLabel="Disposition2">
-                                <rect key="frame" x="147.66666666666666" y="678" width="80" height="80"/>
+                                <rect key="frame" x="636" y="167" width="80" height="80"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="AkZ-9J-SbR"/>
@@ -63,32 +64,8 @@
                                     <action selector="selectDisposition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qVq-yV-ROX"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="iGC-kU-5cy" userLabel="Selected1">
-                                <rect key="frame" x="37.666666666666657" y="678" width="80" height="80"/>
-                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="iGC-kU-5cy" secondAttribute="height" multiplier="1:1" id="pOW-lI-uzr"/>
-                                    <constraint firstAttribute="width" constant="80" id="ucx-ph-4KK"/>
-                                </constraints>
-                            </imageView>
-                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="PA0-8R-efp" userLabel="Selected2">
-                                <rect key="frame" x="147.66666666666666" y="678" width="80" height="80"/>
-                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="9bV-Bz-9AT"/>
-                                    <constraint firstAttribute="width" secondItem="PA0-8R-efp" secondAttribute="height" multiplier="1:1" id="Ro2-4D-qaq"/>
-                                </constraints>
-                            </imageView>
-                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="Mc7-qd-rUO" userLabel="Selected3">
-                                <rect key="frame" x="257.66666666666669" y="678" width="80" height="80"/>
-                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Mc7-qd-rUO" secondAttribute="height" multiplier="1:1" id="7D7-OE-k2p"/>
-                                    <constraint firstAttribute="width" constant="80" id="h7w-x8-Djg"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEp-PY-O6D" userLabel="Disposition3">
-                                <rect key="frame" x="257.66666666666669" y="678" width="80" height="80"/>
+                                <rect key="frame" x="636" y="277" width="80" height="80"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="VHE-zf-8uK"/>
@@ -99,8 +76,32 @@
                                     <action selector="selectDisposition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ggf-uW-Xxn"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="iGC-kU-5cy" userLabel="Selected1">
+                                <rect key="frame" x="636" y="57" width="80" height="80"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="iGC-kU-5cy" secondAttribute="height" multiplier="1:1" id="pOW-lI-uzr"/>
+                                    <constraint firstAttribute="width" constant="80" id="ucx-ph-4KK"/>
+                                </constraints>
+                            </imageView>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="PA0-8R-efp" userLabel="Selected2">
+                                <rect key="frame" x="636" y="167" width="80" height="80"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="9bV-Bz-9AT"/>
+                                    <constraint firstAttribute="width" secondItem="PA0-8R-efp" secondAttribute="height" multiplier="1:1" id="Ro2-4D-qaq"/>
+                                </constraints>
+                            </imageView>
+                            <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="Mc7-qd-rUO" userLabel="Selected3">
+                                <rect key="frame" x="636" y="277" width="80" height="80"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Mc7-qd-rUO" secondAttribute="height" multiplier="1:1" id="7D7-OE-k2p"/>
+                                    <constraint firstAttribute="width" constant="80" id="h7w-x8-Djg"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRZ-kw-R6s" customClass="PhotoContainerView" customModule="P5_Instagrid" customModuleProvider="target">
-                                <rect key="frame" x="37.666666666666657" y="256" width="300" height="300"/>
+                                <rect key="frame" x="218" y="57" width="300" height="300"/>
                                 <subviews>
                                     <button opaque="NO" tag="10" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMA-mA-9um" userLabel="Button1" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="16" y="16" width="126" height="126"/>
@@ -180,7 +181,7 @@
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4E4-Am-DS5">
-                                <rect key="frame" x="87.666666666666686" y="44" width="200" height="40"/>
+                                <rect key="frame" x="268" y="0.0" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="aNp-0P-YkN"/>
                                     <constraint firstAttribute="height" constant="40" id="qC0-I5-vBa"/>
@@ -345,6 +346,7 @@
                     </view>
                     <connections>
                         <outlet property="photoContainer" destination="bRZ-kw-R6s" id="Xba-6X-81J"/>
+                        <outlet property="swipeLabel" destination="fdI-Bf-pxs" id="aEU-IC-sZF"/>
                         <outletCollection property="dispositionSelected" destination="iGC-kU-5cy" collectionClass="NSMutableArray" id="Ih8-mb-lb0"/>
                         <outletCollection property="dispositionSelected" destination="PA0-8R-efp" collectionClass="NSMutableArray" id="VOE-zU-bpB"/>
                         <outletCollection property="dispositionSelected" destination="Mc7-qd-rUO" collectionClass="NSMutableArray" id="Tz7-1H-0FG"/>
@@ -368,6 +370,7 @@
     <resources>
         <image name="Selected" width="80" height="80"/>
         <image name="arrow" width="15" height="10"/>
+        <image name="arrowLeft" width="10" height="15"/>
         <image name="disposition1" width="80" height="80"/>
         <image name="disposition2" width="80" height="80"/>
         <image name="disposition3" width="80" height="80"/>

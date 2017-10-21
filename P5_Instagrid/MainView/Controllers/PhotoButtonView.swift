@@ -25,9 +25,7 @@ class PhotoButtonView: UIButton {
         self.size = size
         
         if let containerView = self.superview {
-            print(containerView.frame)
             let margin = containerView.frame.size.height * 0.05
-            print(margin)
             let side = (containerView.frame.size.width - (margin * 3)) / 2
 
             var sizeButton = CGSize(width: side, height: side)

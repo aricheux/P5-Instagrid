@@ -36,7 +36,6 @@ class PhotoContainerView: UIView {
     public func addImageToButton(_ image: UIImage, buttonTag: Int) {
         plusButton[buttonTag - 10].setImage(image, for: .normal)
         plusButton[buttonTag - 10].imageView?.contentMode = .scaleAspectFill
-        print(plusButton[buttonTag - 10].frame)
     }
     
     public func imageWithView() -> UIImage? {

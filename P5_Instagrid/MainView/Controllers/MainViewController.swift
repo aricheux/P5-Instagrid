@@ -10,11 +10,13 @@ import UIKit
 import Photos
 
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
     // a view that contains the 4 buttons to add photos
     @IBOutlet weak var photoContainer: PhotoContainerView!
     // a view that contains the 3 buttons to choice dispositions
     @IBOutlet var dispositionSelected: [UIImageView]!
+    // a label
+    @IBOutlet weak var swipeLabel: UILabel!
     // current diposition of the photomontage
     var dispositionIndex = 0
     
@@ -24,6 +26,16 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         dispositionIndex = 2
         dispositionSelected[dispositionIndex].isHidden = false
         photoContainer.createDisposition(disposition: dispositionIndex)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+    
+    @objc func rotated() {
+        if UIDevice.current.orientation.isLandscape {
+            swipeLabel.text = "Swipe left to share"
+        } else {
+            swipeLabel.text = "Swipe up to share"
+        }
     }
     
     // Added photos from the user library's
@@ -71,7 +83,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         dispositionSelected[button.tag].isHidden = false
         photoContainer.createDisposition(disposition: button.tag)
     }
-
+    
     @IBAction func swipeUpDetected(_ sender: UISwipeGestureRecognizer) {
         if UIApplication.shared.statusBarOrientation == .portrait {
             animateView(sender.direction)
@@ -83,7 +95,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             animateView(sender.direction)
         }
     }
-
+    
     private func animateView(_ direction: UISwipeGestureRecognizerDirection) {
         let screenHeight = UIScreen.main.bounds.height
         let screenWidth = UIScreen.main.bounds.width
@@ -105,14 +117,13 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     private func sharePhoto() {
-
         // set up activity view controller
         if let imageWithView = photoContainer.imageWithView() {
             let imageToShare = [imageWithView]
             let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
             activityViewController.popoverPresentationController?.sourceView = self.view
             activityViewController.completionWithItemsHandler = { (activity, success, items, error) in
-                    self.photoContainer.transform = .identity
+                self.photoContainer.transform = .identity
             }
             
             // exclude some activity types from the list (optional)
