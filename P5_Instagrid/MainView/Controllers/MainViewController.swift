@@ -36,6 +36,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         } else {
             swipeLabel.text = "Swipe up to share"
         }
+        photoContainer.createDisposition(disposition: dispositionIndex)
     }
     
     // Added photos from the user library's
@@ -80,8 +81,9 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             dispositionSelected.isHidden = true
         }
         
-        dispositionSelected[button.tag].isHidden = false
-        photoContainer.createDisposition(disposition: button.tag)
+        dispositionIndex = button.tag
+        dispositionSelected[dispositionIndex].isHidden = false
+        photoContainer.createDisposition(disposition: dispositionIndex)
     }
     
     @IBAction func swipeUpDetected(_ sender: UISwipeGestureRecognizer) {
@@ -124,6 +126,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             activityViewController.popoverPresentationController?.sourceView = self.view
             activityViewController.completionWithItemsHandler = { (activity, success, items, error) in
                 self.photoContainer.transform = .identity
+                self.photoContainer.removeImagetoButton()
             }
             
             // exclude some activity types from the list (optional)

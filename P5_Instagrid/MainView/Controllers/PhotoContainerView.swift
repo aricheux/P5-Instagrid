@@ -33,6 +33,12 @@ class PhotoContainerView: UIView {
         }
     }
     
+    public func removeImagetoButton() {
+        for plusButton in plusButton {
+            plusButton.setImage(#imageLiteral(resourceName: "plusBlue"), for: .normal)
+        }
+    }
+    
     public func addImageToButton(_ image: UIImage, buttonTag: Int) {
         plusButton[buttonTag - 10].setImage(image, for: .normal)
         plusButton[buttonTag - 10].imageView?.contentMode = .scaleAspectFill
