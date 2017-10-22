@@ -9,13 +9,24 @@
 import UIKit
 import Photos
 
+// Extension to show the image picker in the good orientation
+extension UIImagePickerController
+{
+    override open var shouldAutorotate: Bool {
+        return true
+    }
+    override open var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .all
+    }
+}
+
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // a view that contains the 4 buttons to add photos
     @IBOutlet weak var photoContainer: PhotoContainerView!
-    // a view that contains the 3 buttons to choice dispositions
+    // a collection connexion for the four image "disposition selected"
     @IBOutlet var dispositionSelected: [UIImageView]!
-    // a label
+    // a label to explain how you can share the image
     @IBOutlet weak var swipeLabel: UILabel!
     // current diposition of the photomontage
     var dispositionIndex = 0
@@ -30,6 +41,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
+    // Check if the orientation of the device change and change the label text
     @objc func rotated() {
         if UIDevice.current.orientation.isLandscape {
             swipeLabel.text = "Swipe left to share"
@@ -39,13 +51,13 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         photoContainer.createDisposition(disposition: dispositionIndex)
     }
     
-    // Added photos from the user library's
+    /* Check if the user has authorized access to the library
+    Add image to the button from the user library */
     @IBAction func selectPhoto(_ sender: Any) {
         guard let button = sender as? UIButton else {
             return
         }
         
-        // Library authorization
         let libraryAuthorization = PHPhotoLibrary.authorizationStatus()
         if libraryAuthorization == .notDetermined {
             PHPhotoLibrary.requestAuthorization({status in
@@ -86,18 +98,21 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         photoContainer.createDisposition(disposition: dispositionIndex)
     }
     
+    // Connexion to the storyboard to detect a swipe up
     @IBAction func swipeUpDetected(_ sender: UISwipeGestureRecognizer) {
         if UIApplication.shared.statusBarOrientation == .portrait {
             animateView(sender.direction)
         }
     }
     
+    // Connexion to the storyboard to detect a swipe left
     @IBAction func swipeLeftDetected(_ sender: UISwipeGestureRecognizer) {
         if UIApplication.shared.statusBarOrientation != .portrait {
             animateView(sender.direction)
         }
     }
     
+    // Move the photocontainer to the good position before share
     private func animateView(_ direction: UISwipeGestureRecognizerDirection) {
         let screenHeight = UIScreen.main.bounds.height
         let screenWidth = UIScreen.main.bounds.width
@@ -118,6 +133,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         })
     }
     
+    // Create the image from the photocontainer view and share it
     private func sharePhoto() {
         // set up activity view controller
         if let imageWithView = photoContainer.imageWithView() {
@@ -129,10 +145,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                 self.photoContainer.removeImagetoButton()
             }
             
-            // exclude some activity types from the list (optional)
-            activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
-            
-            // present the view controller
+            activityViewController.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.postToFacebook,UIActivityType.postToTwitter]
             self.present(activityViewController, animated: true, completion: nil)
         }
     }

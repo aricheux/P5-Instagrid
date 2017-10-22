@@ -10,9 +10,10 @@ import UIKit
 
 class PhotoContainerView: UIView {
     
+    // Connexion to the storyboard for the four buttons
     @IBOutlet var plusButton: [PhotoButtonView]!
     
-    // Resize the button to the original size and resize according to the disposition choice
+    // Resize all button to the original size and resize them according to the disposition choice
     public func createDisposition(disposition: Int) {
         plusButton[0].location = .topLeft
         plusButton[1].location = .topRight
@@ -33,17 +34,20 @@ class PhotoContainerView: UIView {
         }
     }
     
+    // Set the original image to the button
     public func removeImagetoButton() {
         for plusButton in plusButton {
             plusButton.setImage(#imageLiteral(resourceName: "plusBlue"), for: .normal)
         }
     }
     
+    // set the user image to the button
     public func addImageToButton(_ image: UIImage, buttonTag: Int) {
         plusButton[buttonTag - 10].setImage(image, for: .normal)
         plusButton[buttonTag - 10].imageView?.contentMode = .scaleAspectFill
     }
     
+    // make an image with the disposition image to share it
     public func imageWithView() -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.isOpaque, 0.0)
         self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)

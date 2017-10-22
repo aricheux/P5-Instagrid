@@ -10,11 +10,9 @@ import UIKit
 
 class DispositionContainerView: UIView {
     
+    // Connexion with the storyboard
+    // Image to show the disposition is selected
     @IBOutlet var dispositionSelected: [UIImageView]!
     @IBOutlet var dispositionButton: [UIButton]!
-    
-    public func changeDisposition(disposition: Int) {
-
-    }
     
 }
