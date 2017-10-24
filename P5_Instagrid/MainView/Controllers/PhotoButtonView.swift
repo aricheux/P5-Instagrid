@@ -19,9 +19,8 @@ enum Location {
 class PhotoButtonView: UIButton {
     
     var size: Size = .normal
-    var location: Location = .topLeft
     
-    public func initFrame(size: Size) {
+    public func setFrame(size: Size) {
         self.size = size
         
         if let containerView = self.superview {
@@ -33,19 +32,9 @@ class PhotoButtonView: UIButton {
                 sizeButton = CGSize(width: side*2 + margin, height: side)
             }
             
-            var originButton = CGPoint()
-            switch location {
-            case .topLeft:
-                originButton = CGPoint(x: margin, y: margin)
-            case .topRight:
-                originButton = CGPoint(x: side + margin * 2, y: margin)
-            case .bottomLeft:
-                originButton = CGPoint(x: margin, y: side + margin * 2)
-            case .bottomRight:
-                originButton = CGPoint(x: side + margin * 2, y: side + margin * 2)
-            }
-            
-            self.frame = CGRect(origin: originButton, size: sizeButton)
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+                self.frame.size = sizeButton
+            },completion: nil)
         }
     }
 }

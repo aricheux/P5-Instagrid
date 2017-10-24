@@ -14,7 +14,6 @@
 		710FA59A1F88254C00BB3CBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710FA5981F88254C00BB3CBF /* LaunchScreen.storyboard */; };
 		71277C6B1F88C333006AC630 /* PhotoContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71277C6A1F88C333006AC630 /* PhotoContainerView.swift */; };
 		71277C711F8CA5DD006AC630 /* PhotoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71277C701F8CA5DD006AC630 /* PhotoButtonView.swift */; };
-		71277C731F8CCD64006AC630 /* DispositionContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71277C721F8CCD64006AC630 /* DispositionContainerView.swift */; };
 		71277C761F8D0676006AC630 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71277C751F8D0612006AC630 /* Delm-Medium.otf */; };
 		71277C771F8D0676006AC630 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71277C741F8D0612006AC630 /* ThirstySoftRegular.otf */; };
 /* End PBXBuildFile section */
@@ -29,7 +28,6 @@
 		710FA59B1F88254C00BB3CBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71277C6A1F88C333006AC630 /* PhotoContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoContainerView.swift; sourceTree = "<group>"; };
 		71277C701F8CA5DD006AC630 /* PhotoButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoButtonView.swift; sourceTree = "<group>"; };
-		71277C721F8CCD64006AC630 /* DispositionContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispositionContainerView.swift; sourceTree = "<group>"; };
 		71277C741F8D0612006AC630 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThirstySoftRegular.otf; path = ../../../Polices/ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		71277C751F8D0612006AC630 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Medium.otf"; path = "../../../Polices/Delm-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,7 +84,6 @@
 				710FA5911F88254C00BB3CBF /* MainViewController.swift */,
 				71277C6A1F88C333006AC630 /* PhotoContainerView.swift */,
 				71277C701F8CA5DD006AC630 /* PhotoButtonView.swift */,
-				71277C721F8CCD64006AC630 /* DispositionContainerView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -179,7 +176,6 @@
 			files = (
 				71277C711F8CA5DD006AC630 /* PhotoButtonView.swift in Sources */,
 				710FA5921F88254C00BB3CBF /* MainViewController.swift in Sources */,
-				71277C731F8CCD64006AC630 /* DispositionContainerView.swift in Sources */,
 				71277C6B1F88C333006AC630 /* PhotoContainerView.swift in Sources */,
 				710FA5901F88254C00BB3CBF /* AppDelegate.swift in Sources */,
 			);

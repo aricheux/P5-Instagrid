@@ -15,21 +15,17 @@ class PhotoContainerView: UIView {
     
     // Resize all button to the original size and resize them according to the disposition choice
     public func createDisposition(disposition: Int) {
-        plusButton[0].location = .topLeft
-        plusButton[1].location = .topRight
-        plusButton[2].location = .bottomLeft
-        plusButton[3].location = .bottomRight
         
         for button in plusButton {
             button.isHidden = false
-            button.initFrame(size: .normal)
+            button.setFrame(size: .normal)
         }
         
         if disposition == 0 {
-            plusButton[0].initFrame(size: .long)
+            plusButton[0].setFrame(size: .long)
             plusButton[1].isHidden = true
         } else if disposition == 1 {
-            plusButton[2].initFrame(size: .long)
+            plusButton[2].setFrame(size: .long)
             plusButton[3].isHidden = true
         }
     }
