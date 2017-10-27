@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Photo container view handling
 class PhotoContainerView: UIView {
     
     // Connexion to the storyboard for the four buttons
@@ -30,7 +31,7 @@ class PhotoContainerView: UIView {
         }
     }
     
-    // Set the original image to the button
+    // Set the original image to the button according to the device's orientation
     public func removeImagetoButton() {
         for plusButton in plusButton {
             if UIApplication.shared.statusBarOrientation != .portrait {

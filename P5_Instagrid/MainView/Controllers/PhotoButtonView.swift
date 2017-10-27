@@ -8,18 +8,18 @@
 
 import UIKit
 
+// Enumeration to define the size of the button
 enum Size {
     case normal, long
 }
 
-enum Location {
-    case topLeft, topRight, bottomLeft, bottomRight
-}
-
+// Photo button view handling
 class PhotoButtonView: UIButton {
-    
+    // Size of the button
     var size: Size = .normal
-    
+
+    /* Set the frame of the button according to the button's size
+       Animate the transition between two frame */
     public func setFrame(size: Size) {
         self.size = size
         

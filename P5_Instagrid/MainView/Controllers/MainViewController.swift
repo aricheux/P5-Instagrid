@@ -83,7 +83,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
-    // Add the image to the button when the action is done
+    // Add the image to the button when the user has selected the photo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickerImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             photoContainer.addImageToButton(pickerImage, buttonTag: picker.view.tag)
@@ -106,21 +106,21 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         photoContainer.createDisposition(disposition: dispositionIndex)
     }
     
-    // Connexion to the storyboard to detect a swipe up
+    // Connexion to the storyboard to detect a swipe up and run the animation
     @IBAction func swipeUpDetected(_ sender: UISwipeGestureRecognizer) {
         if UIApplication.shared.statusBarOrientation == .portrait {
             animateView(sender.direction)
         }
     }
     
-    // Connexion to the storyboard to detect a swipe left
+    // Connexion to the storyboard to detect a swipe left and run the animation
     @IBAction func swipeLeftDetected(_ sender: UISwipeGestureRecognizer) {
         if UIApplication.shared.statusBarOrientation != .portrait {
             animateView(sender.direction)
         }
     }
     
-    // Move the photocontainer to the good position before share
+    // Move the photocontainer outside of the screen and share the photomontage
     private func animateView(_ direction: UISwipeGestureRecognizerDirection) {
         let screenHeight = UIScreen.main.bounds.height
         let screenWidth = UIScreen.main.bounds.width
