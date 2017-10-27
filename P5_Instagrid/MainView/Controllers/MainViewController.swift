@@ -20,6 +20,7 @@ extension UIImagePickerController
     }
 }
 
+// Main view handling
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // a view that contains the 4 buttons to add photos
@@ -31,6 +32,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     // current diposition of the photomontage
     var dispositionIndex = 0
     
+    // Set the standard disposition when the view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +43,8 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
-    // Check if the orientation of the device change and change the label text
+    /* Check if the device's orientation has changed
+    According to the current orientation change the label text and reload the current disposition */
     @objc func rotated() {
         if UIDevice.current.orientation.isLandscape {
             swipeLabel.text = "Swipe left to share"
@@ -58,10 +61,13 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             return
         }
         
+        let alert = UIAlertController(title : "Accès refusé", message: "Vous devez autoriser l'accès au photos dans les réglage de l'application", preferredStyle : UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        
         let libraryAuthorization = PHPhotoLibrary.authorizationStatus()
         if libraryAuthorization == .notDetermined {
             PHPhotoLibrary.requestAuthorization({status in
-                if status == .authorized{
+                if status == .authorized  {
                     self.selectPhoto(sender)
                 }
             })
@@ -72,6 +78,8 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             imagePicker.allowsEditing = false
             imagePicker.view.tag = button.tag
             self.present(imagePicker, animated: true, completion: nil)
+        } else if libraryAuthorization == .denied {
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
