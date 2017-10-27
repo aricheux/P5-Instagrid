@@ -30,13 +30,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdI-Bf-pxs">
-                                <rect key="frame" x="20" y="169.33333333333334" width="374" height="30"/>
+                                <rect key="frame" x="20" y="167.66666666666666" width="374" height="31.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Delm-Medium" family="Delm" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="7WT-Fv-zJB">
-                                <rect key="frame" x="199.66666666666666" y="159.33333333333334" width="15" height="10"/>
+                                <rect key="frame" x="199.66666666666666" y="157.66666666666666" width="15" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="ZuT-4m-lkT"/>
                                     <constraint firstAttribute="height" constant="10" id="t6N-C6-JJl"/>
@@ -96,7 +96,7 @@
                                     <constraint firstAttribute="width" constant="200" id="aNp-0P-YkN"/>
                                     <constraint firstAttribute="height" constant="50" id="qC0-I5-vBa"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="40"/>
+                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -114,7 +114,7 @@
                                             <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0BR-49-Odz"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="13" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1H-NT-g2o" userLabel="Button4" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
+                                    <button opaque="NO" tag="13" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1H-NT-g2o" userLabel="Button4" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="173.66666666666663" y="173.66666666666669" width="141.33333333333337" height="140.66666666666669"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -125,7 +125,7 @@
                                             <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PbO-AJ-f1Y"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="12" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZ7-YG-jPg" userLabel="Button3" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
+                                    <button opaque="NO" tag="12" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yZ7-YG-jPg" userLabel="Button3" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="17" y="174" width="140.66666666666666" height="140.66666666666663"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -136,7 +136,7 @@
                                             <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VW9-aj-riJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="10" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMA-mA-9um" userLabel="Button1" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMA-mA-9um" userLabel="Button1" customClass="PhotoButtonView" customModule="P5_Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="17" y="17.666666666666657" width="140.66666666666666" height="140.33333333333334"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -258,14 +258,12 @@
                                 <exclude reference="7sh-Xd-ZrT"/>
                                 <exclude reference="VGS-Bu-Ive"/>
                                 <exclude reference="uje-dw-ByD"/>
+                                <exclude reference="vrT-HC-dpd"/>
                                 <exclude reference="6Ju-gy-2z4"/>
                                 <exclude reference="7Ku-z2-wDs"/>
                                 <exclude reference="P2k-6P-1Pf"/>
                                 <exclude reference="aO6-yP-3N9"/>
                                 <exclude reference="gnA-JS-zMZ"/>
-                                <exclude reference="Fdd-v1-8AM"/>
-                                <exclude reference="LMX-oZ-N8v"/>
-                                <exclude reference="wL3-GV-t4B"/>
                                 <exclude reference="AsA-Uf-cz9"/>
                                 <exclude reference="E0Y-nE-xBu"/>
                                 <exclude reference="TTM-FZ-sxR"/>
@@ -276,7 +274,9 @@
                                 <exclude reference="xtP-bG-Q0M"/>
                                 <exclude reference="yHy-BI-Z87"/>
                                 <exclude reference="yvK-if-E1v"/>
-                                <exclude reference="vrT-HC-dpd"/>
+                                <exclude reference="Fdd-v1-8AM"/>
+                                <exclude reference="LMX-oZ-N8v"/>
+                                <exclude reference="wL3-GV-t4B"/>
                                 <exclude reference="F1F-8S-iMY"/>
                                 <exclude reference="VOg-YU-wYb"/>
                                 <exclude reference="vIB-CJ-Afj"/>
@@ -303,6 +303,8 @@
                                 <exclude reference="BmK-Cb-lUA"/>
                                 <exclude reference="VGS-Bu-Ive"/>
                                 <exclude reference="uje-dw-ByD"/>
+                                <exclude reference="PG2-nH-xm8"/>
+                                <include reference="vrT-HC-dpd"/>
                                 <include reference="6Ju-gy-2z4"/>
                                 <exclude reference="7Ku-z2-wDs"/>
                                 <exclude reference="Dxu-AB-Ffs"/>
@@ -310,10 +312,6 @@
                                 <include reference="aO6-yP-3N9"/>
                                 <exclude reference="f0V-YO-0Y9"/>
                                 <exclude reference="gnA-JS-zMZ"/>
-                                <exclude reference="6pt-DU-qJ7"/>
-                                <exclude reference="Fdd-v1-8AM"/>
-                                <exclude reference="LMX-oZ-N8v"/>
-                                <exclude reference="wL3-GV-t4B"/>
                                 <include reference="AsA-Uf-cz9"/>
                                 <exclude reference="Dm8-Fr-8Y7"/>
                                 <exclude reference="E0Y-nE-xBu"/>
@@ -327,8 +325,10 @@
                                 <exclude reference="xtP-bG-Q0M"/>
                                 <exclude reference="yHy-BI-Z87"/>
                                 <exclude reference="yvK-if-E1v"/>
-                                <exclude reference="PG2-nH-xm8"/>
-                                <include reference="vrT-HC-dpd"/>
+                                <exclude reference="6pt-DU-qJ7"/>
+                                <exclude reference="Fdd-v1-8AM"/>
+                                <exclude reference="LMX-oZ-N8v"/>
+                                <exclude reference="wL3-GV-t4B"/>
                                 <exclude reference="Blz-dD-jT5"/>
                                 <include reference="F1F-8S-iMY"/>
                                 <include reference="VOg-YU-wYb"/>

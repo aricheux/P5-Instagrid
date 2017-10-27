@@ -33,7 +33,11 @@ class PhotoContainerView: UIView {
     // Set the original image to the button
     public func removeImagetoButton() {
         for plusButton in plusButton {
-            plusButton.setImage(#imageLiteral(resourceName: "plusBlue"), for: .normal)
+            if UIApplication.shared.statusBarOrientation != .portrait {
+                plusButton.setImage(#imageLiteral(resourceName: "plusGray"), for: .normal)
+            } else {
+                plusButton.setImage(#imageLiteral(resourceName: "plusBlue"), for: .normal)
+            }
         }
     }
     
