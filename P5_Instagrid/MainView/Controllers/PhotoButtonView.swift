@@ -17,24 +17,36 @@ enum Size {
 class PhotoButtonView: UIButton {
     // Size of the button
     var size: Size = .normal
-
+    
     /* Set the frame of the button according to the button's size
-       Animate the transition between two frame */
-    public func setFrame(size: Size) {
+     Animate the transition between two frame */
+    public func setFrame(size: Size, animated: Bool) {
         self.size = size
         
         if let containerView = self.superview {
             let margin = containerView.frame.size.height * 0.05
             let side = (containerView.frame.size.width - (margin * 3)) / 2
-
+            
             var sizeButton = CGSize(width: side, height: side)
             if size == .long {
                 sizeButton = CGSize(width: side*2 + margin, height: side)
             }
             
-            UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            if animated {
+                UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
+                    self.frame.size = sizeButton
+                },completion: { _ in
+                    UIView.animate(withDuration: 0.5, animations: {
+                        self.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                    },completion: { _ in
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.transform = .identity
+                        },completion: nil)
+                    })
+                })
+            } else {
                 self.frame.size = sizeButton
-            },completion: nil)
+            }
         }
     }
 }

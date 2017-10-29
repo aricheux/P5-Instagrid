@@ -23,13 +23,13 @@ extension UIImagePickerController
 // Main view handling
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    // a view that contains the 4 buttons to add photos
+    // A view that contains the 4 buttons to add photos
     @IBOutlet weak var photoContainer: PhotoContainerView!
-    // a collection connexion for the four image "disposition selected"
+    // A collection connexion for the four image "disposition selected"
     @IBOutlet var dispositionSelected: [UIImageView]!
-    // a label to explain how you can share the image
+    // A label to explain how you can share the image
     @IBOutlet weak var swipeLabel: UILabel!
-    // current diposition of the photomontage
+    // Current diposition of the photomontage
     var dispositionIndex = 0
     
     // Set the standard disposition when the view is loaded
@@ -39,12 +39,12 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         dispositionIndex = 2
         dispositionSelected[dispositionIndex].isHidden = false
         photoContainer.createDisposition(disposition: dispositionIndex)
-
+        
         NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
     /* Check if the device's orientation has changed
-    According to the current orientation change the label text and reload the current disposition */
+     According to the current orientation change the label text and reload the current disposition */
     @objc func rotated() {
         if UIDevice.current.orientation.isLandscape {
             swipeLabel.text = "Swipe left to share"
@@ -55,7 +55,8 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     /* Check if the user has authorized access to the library
-    Add image to the button from the user library */
+     Add image to the button from the user library
+     Show an alert if the authorization is denied */
     @IBAction func selectPhoto(_ sender: Any) {
         guard let button = sender as? UIButton else {
             return
@@ -91,7 +92,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
     
-    // Choice the photomontage disposition and change the frame of the view
+    // Choice the disposition of the photomontage and change the frame of the container view
     @IBAction func selectDisposition(_ sender: Any) {
         guard let button = sender as? UIButton else {
             return
@@ -131,8 +132,8 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         } else {
             translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
         }
-        
-        UIView.animate(withDuration: 1.0, animations: {
+
+        UIView.animate(withDuration: 0.8, animations: {
             self.photoContainer.transform = translationTransform
         }, completion: { (success) in
             if success {

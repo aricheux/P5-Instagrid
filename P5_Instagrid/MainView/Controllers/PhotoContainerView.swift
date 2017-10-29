@@ -19,14 +19,14 @@ class PhotoContainerView: UIView {
         
         for button in plusButton {
             button.isHidden = false
-            button.setFrame(size: .normal)
+            button.setFrame(size: .normal, animated: false)
         }
         
         if disposition == 0 {
-            plusButton[0].setFrame(size: .long)
+            plusButton[0].setFrame(size: .long, animated: true)
             plusButton[1].isHidden = true
         } else if disposition == 1 {
-            plusButton[2].setFrame(size: .long)
+            plusButton[2].setFrame(size: .long, animated: true)
             plusButton[3].isHidden = true
         }
     }
@@ -42,13 +42,13 @@ class PhotoContainerView: UIView {
         }
     }
     
-    // set the user image to the button
+    // Set the user image to the button
     public func addImageToButton(_ image: UIImage, buttonTag: Int) {
         plusButton[buttonTag - 10].setImage(image, for: .normal)
         plusButton[buttonTag - 10].imageView?.contentMode = .scaleAspectFill
     }
     
-    // make an image with the disposition image to share it
+    // Make an image with the disposition image to share it
     public func imageWithView() -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(self.bounds.size, self.isOpaque, 0.0)
         self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
