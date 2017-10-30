@@ -19,16 +19,17 @@ class PhotoContainerView: UIView {
         
         for button in plusButton {
             button.isHidden = false
-            button.setFrame(size: .normal, animated: false)
+            button.setFrame(size: .normal)
         }
         
         if disposition == 0 {
-            plusButton[0].setFrame(size: .long, animated: true)
+            plusButton[0].setFrame(size: .long)
             plusButton[1].isHidden = true
         } else if disposition == 1 {
-            plusButton[2].setFrame(size: .long, animated: true)
+            plusButton[2].setFrame(size: .long)
             plusButton[3].isHidden = true
         }
+        
     }
     
     // Set the original image to the button according to the device's orientation

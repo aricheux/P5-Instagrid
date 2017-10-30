@@ -74,10 +74,12 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             })
         } else if libraryAuthorization == .authorized {
             let imagePicker = UIImagePickerController()
+            
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
             imagePicker.allowsEditing = false
             imagePicker.view.tag = button.tag
+            
             self.present(imagePicker, animated: true, completion: nil)
         } else if libraryAuthorization == .denied {
             self.present(alert, animated: true, completion: nil)
@@ -97,7 +99,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         guard let button = sender as? UIButton else {
             return
         }
-        
+                
         for dispositionSelected in dispositionSelected {
             dispositionSelected.isHidden = true
         }

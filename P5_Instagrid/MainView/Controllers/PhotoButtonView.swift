@@ -20,7 +20,7 @@ class PhotoButtonView: UIButton {
     
     /* Set the frame of the button according to the button's size
      Animate the transition between two frame */
-    public func setFrame(size: Size, animated: Bool) {
+    public func setFrame(size: Size) {
         self.size = size
         
         if let containerView = self.superview {
@@ -32,21 +32,9 @@ class PhotoButtonView: UIButton {
                 sizeButton = CGSize(width: side*2 + margin, height: side)
             }
             
-            if animated {
-                UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
-                    self.frame.size = sizeButton
-                },completion: { _ in
-                    UIView.animate(withDuration: 0.5, animations: {
-                        self.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-                    },completion: { _ in
-                        UIView.animate(withDuration: 0.5, animations: {
-                            self.transform = .identity
-                        },completion: nil)
-                    })
-                })
-            } else {
+            UIView.animate(withDuration: 0.5, delay: 0.0, animations: {
                 self.frame.size = sizeButton
-            }
+            },completion: nil)
         }
     }
 }
