@@ -58,9 +58,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
      Add image to the button from the user library
      Show an alert if the authorization is denied */
     @IBAction func selectPhoto(_ sender: Any) {
-        guard let button = sender as? UIButton else {
-            return
-        }
+        guard let button = sender as? UIButton else { return }
         
         let alert = UIAlertController(title : "Accès refusé", message: "Vous devez autoriser l'accès au photos dans les réglage de l'application", preferredStyle : UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
@@ -99,7 +97,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         guard let button = sender as? UIButton else {
             return
         }
-                
+        
         for dispositionSelected in dispositionSelected {
             dispositionSelected.isHidden = true
         }
@@ -134,7 +132,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         } else {
             translationTransform = CGAffineTransform(translationX: -screenWidth, y: 0)
         }
-
+        
         UIView.animate(withDuration: 0.8, animations: {
             self.photoContainer.transform = translationTransform
         }, completion: { (success) in

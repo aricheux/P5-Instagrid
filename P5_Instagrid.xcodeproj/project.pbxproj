@@ -16,6 +16,7 @@
 		71277C711F8CA5DD006AC630 /* PhotoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71277C701F8CA5DD006AC630 /* PhotoButtonView.swift */; };
 		71277C761F8D0676006AC630 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71277C751F8D0612006AC630 /* Delm-Medium.otf */; };
 		71277C771F8D0676006AC630 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71277C741F8D0612006AC630 /* ThirstySoftRegular.otf */; };
+		714805EC1FA8C7F3007687D0 /* PhotoMontage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714805EB1FA8C7F3007687D0 /* PhotoMontage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		71277C701F8CA5DD006AC630 /* PhotoButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoButtonView.swift; sourceTree = "<group>"; };
 		71277C741F8D0612006AC630 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThirstySoftRegular.otf; path = ../../../Polices/ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		71277C751F8D0612006AC630 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Medium.otf"; path = "../../../Polices/Delm-Medium.otf"; sourceTree = "<group>"; };
+		714805EB1FA8C7F3007687D0 /* PhotoMontage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMontage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		710FA58E1F88254C00BB3CBF /* P5_Instagrid */ = {
 			isa = PBXGroup;
 			children = (
+				710FA58F1F88254C00BB3CBF /* AppDelegate.swift */,
 				710FA5981F88254C00BB3CBF /* LaunchScreen.storyboard */,
 				71CD55A81F8826BB005122D8 /* MainView */,
 				71CD55AA1F8826D3005122D8 /* Ressources */,
@@ -69,10 +72,19 @@
 			path = P5_Instagrid;
 			sourceTree = "<group>";
 		};
+		714805EA1FA8C7D8007687D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				714805EB1FA8C7F3007687D0 /* PhotoMontage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		71CD55A81F8826BB005122D8 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
 				710FA5931F88254C00BB3CBF /* Main.storyboard */,
+				714805EA1FA8C7D8007687D0 /* Model */,
 				71CD55A91F8826C6005122D8 /* Controllers */,
 			);
 			path = MainView;
@@ -93,7 +105,6 @@
 			children = (
 				71277C751F8D0612006AC630 /* Delm-Medium.otf */,
 				71277C741F8D0612006AC630 /* ThirstySoftRegular.otf */,
-				710FA58F1F88254C00BB3CBF /* AppDelegate.swift */,
 				710FA5961F88254C00BB3CBF /* Assets.xcassets */,
 				710FA59B1F88254C00BB3CBF /* Info.plist */,
 			);
@@ -174,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				714805EC1FA8C7F3007687D0 /* PhotoMontage.swift in Sources */,
 				71277C711F8CA5DD006AC630 /* PhotoButtonView.swift in Sources */,
 				710FA5921F88254C00BB3CBF /* MainViewController.swift in Sources */,
 				71277C6B1F88C333006AC630 /* PhotoContainerView.swift in Sources */,
