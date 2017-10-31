@@ -29,16 +29,16 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet var dispositionSelected: [UIImageView]!
     // A label to explain how you can share the image
     @IBOutlet weak var swipeLabel: UILabel!
-    // Current diposition of the photomontage
-    var dispositionIndex = 0
+    
+    // Create a photomontage
+    var photoMontage = PhotoMontage()
     
     // Set the standard disposition when the view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        dispositionIndex = 2
-        dispositionSelected[dispositionIndex].isHidden = false
-        photoContainer.createDisposition(disposition: dispositionIndex)
+                
+        dispositionSelected[photoMontage.dispositionIndex].isHidden = false
+        photoContainer.createDisposition(disposition: photoMontage.dispositionIndex)
         
         NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
@@ -51,7 +51,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         } else {
             swipeLabel.text = "Swipe up to share"
         }
-        photoContainer.createDisposition(disposition: dispositionIndex)
+        photoContainer.createDisposition(disposition: photoMontage.dispositionIndex)
     }
     
     /* Check if the user has authorized access to the library
@@ -102,9 +102,9 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             dispositionSelected.isHidden = true
         }
         
-        dispositionIndex = button.tag
-        dispositionSelected[dispositionIndex].isHidden = false
-        photoContainer.createDisposition(disposition: dispositionIndex)
+        photoMontage.changeDisposition(button.tag)
+        dispositionSelected[photoMontage.dispositionIndex].isHidden = false
+        photoContainer.createDisposition(disposition: photoMontage.dispositionIndex)
     }
     
     // Connexion to the storyboard to detect a swipe up and run the animation

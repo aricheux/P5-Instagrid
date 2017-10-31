@@ -9,7 +9,13 @@
 import Foundation
 
 class PhotoMontage {
-    var dispositionIndex: Int?
+    var dispositionIndex: Int
     
+    init() {
+        dispositionIndex = 2
+    }
     
+    func changeDisposition(_ disposition: Int) {
+        dispositionIndex = disposition
+    }
 }
