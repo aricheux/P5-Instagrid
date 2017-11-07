@@ -24,8 +24,9 @@ class PhotoMontage {
     var dispositionIndex: Int
     var imageButton = [ImageButton]()
     
-    init() {
-        dispositionIndex = 2
+    init(disposition: Int) {
+        dispositionIndex = disposition
+        
         for _ in 0...imageNumber-1 {
             imageButton.append(ImageButton.init(size: .normal, hidden: false))
         }
@@ -36,7 +37,6 @@ class PhotoMontage {
     }
     
     func refreshView() -> [ImageButton] {
-       
         for i in 0...imageNumber-1 {
             imageButton[i].size = .normal
             imageButton[i].hidden = false
@@ -59,6 +59,7 @@ class PhotoMontage {
         view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         let img = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        
         return img
     }
 }

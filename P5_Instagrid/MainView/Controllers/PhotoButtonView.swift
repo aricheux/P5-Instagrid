@@ -14,12 +14,11 @@ class PhotoButtonView: UIButton {
     /* Set the frame of the button according to the button's size
      Animate the transition between two frame */
     public func setFrame(size: ButtonSize) {
-        
         if let containerView = self.superview {
             let margin = containerView.frame.size.height * 0.05
             let side = (containerView.frame.size.width - (margin * 3)) / 2
-            
             var sizeButton = CGSize(width: side, height: side)
+            
             if size == .long {
                 sizeButton = CGSize(width: side*2 + margin, height: side)
             }

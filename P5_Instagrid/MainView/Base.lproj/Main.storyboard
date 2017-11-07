@@ -91,7 +91,7 @@
                                 </constraints>
                             </imageView>
                             <imageView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="Selected" translatesAutoresizingMaskIntoConstraints="NO" id="Mc7-qd-rUO" userLabel="Selected3">
-                                <rect key="frame" x="284" y="587" width="88.333333333333314" height="88.333333333333371"/>
+                                <rect key="frame" x="284.33333333333331" y="587" width="88.333333333333314" height="88.333333333333371"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Mc7-qd-rUO" secondAttribute="height" multiplier="1:1" id="J0N-9U-JLF"/>

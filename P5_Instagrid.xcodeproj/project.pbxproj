@@ -16,6 +16,7 @@
 		71277C761F8D0676006AC630 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71277C751F8D0612006AC630 /* Delm-Medium.otf */; };
 		71277C771F8D0676006AC630 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 71277C741F8D0612006AC630 /* ThirstySoftRegular.otf */; };
 		714805EC1FA8C7F3007687D0 /* PhotoMontage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714805EB1FA8C7F3007687D0 /* PhotoMontage.swift */; };
+		71E2219A1FB25E2B006D2ECC /* UIImagePickerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E221991FB25E2B006D2ECC /* UIImagePickerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		71277C741F8D0612006AC630 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ThirstySoftRegular.otf; path = ../../../Polices/ThirstySoftRegular.otf; sourceTree = "<group>"; };
 		71277C751F8D0612006AC630 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Medium.otf"; path = "../../../Polices/Delm-Medium.otf"; sourceTree = "<group>"; };
 		714805EB1FA8C7F3007687D0 /* PhotoMontage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoMontage.swift; sourceTree = "<group>"; };
+		71E221991FB25E2B006D2ECC /* UIImagePickerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePickerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		710FA58E1F88254C00BB3CBF /* P5_Instagrid */ = {
 			isa = PBXGroup;
 			children = (
+				71E221991FB25E2B006D2ECC /* UIImagePickerExtension.swift */,
 				710FA58F1F88254C00BB3CBF /* AppDelegate.swift */,
 				710FA5981F88254C00BB3CBF /* LaunchScreen.storyboard */,
 				71CD55A81F8826BB005122D8 /* MainView */,
@@ -184,6 +187,7 @@
 			files = (
 				714805EC1FA8C7F3007687D0 /* PhotoMontage.swift in Sources */,
 				71277C711F8CA5DD006AC630 /* PhotoButtonView.swift in Sources */,
+				71E2219A1FB25E2B006D2ECC /* UIImagePickerExtension.swift in Sources */,
 				710FA5921F88254C00BB3CBF /* MainViewController.swift in Sources */,
 				710FA5901F88254C00BB3CBF /* AppDelegate.swift in Sources */,
 			);
