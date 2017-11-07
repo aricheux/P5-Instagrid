@@ -24,7 +24,9 @@ extension UIImagePickerController
 class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // A view that contains the 4 buttons to add photos
-    @IBOutlet weak var photoContainer: PhotoContainerView!
+    @IBOutlet weak var photoContainer: UIView!
+    // Connexion to the storyboard for the four buttons
+    @IBOutlet var plusButton: [PhotoButtonView]!
     // A collection connexion for the four image "disposition selected"
     @IBOutlet var dispositionSelected: [UIImageView]!
     // A label to explain how you can share the image
@@ -37,8 +39,8 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        dispositionSelected[photoMontage.dispositionIndex].isHidden = false
-        photoContainer.createDisposition(disposition: photoMontage.dispositionIndex)
+    dispositionSelected[photoMontage.dispositionIndex].isHidden = false
+        self.refreshView()
         
         NotificationCenter.default.addObserver(self, selector: #selector(MainViewController.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
@@ -51,7 +53,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         } else {
             swipeLabel.text = "Swipe up to share"
         }
-        photoContainer.createDisposition(disposition: photoMontage.dispositionIndex)
+        self.refreshView()
     }
     
     /* Check if the user has authorized access to the library
@@ -87,7 +89,8 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     // Add the image to the button when the user has selected the photo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickerImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            photoContainer.addImageToButton(pickerImage, buttonTag: picker.view.tag)
+            plusButton[picker.view.tag].setImage(pickerImage, for: .normal)
+            plusButton[picker.view.tag].imageView?.contentMode = .scaleAspectFill
             dismiss(animated: true)
         }
     }
@@ -102,9 +105,9 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             dispositionSelected.isHidden = true
         }
         
-        photoMontage.changeDisposition(button.tag)
+        photoMontage.updateDisposition(button.tag)
         dispositionSelected[photoMontage.dispositionIndex].isHidden = false
-        photoContainer.createDisposition(disposition: photoMontage.dispositionIndex)
+        self.refreshView()
     }
     
     // Connexion to the storyboard to detect a swipe up and run the animation
@@ -118,6 +121,17 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBAction func swipeLeftDetected(_ sender: UISwipeGestureRecognizer) {
         if UIApplication.shared.statusBarOrientation != .portrait {
             animateView(sender.direction)
+        }
+    }
+    
+    // Resize all button to the original size and resize them according to the disposition choice
+    private func refreshView() {
+        
+        let imageButton = photoMontage.refreshView()
+        
+        for i in 0...plusButton.count {
+            plusButton[i].isHidden = imageButton[i].hidden
+            plusButton[i].setFrame(size: imageButton[i].size)
         }
     }
     
@@ -145,17 +159,24 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     // Create the image from the photocontainer view and share it
     private func sharePhoto() {
         // set up activity view controller
-        if let imageWithView = photoContainer.imageWithView() {
+        if let imageWithView = photoMontage.imageWithView(view: photoContainer) {
             let imageToShare = [imageWithView]
             let activityViewController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
             activityViewController.popoverPresentationController?.sourceView = self.view
             activityViewController.completionWithItemsHandler = { (activity, success, items, error) in
                 self.photoContainer.transform = .identity
-                self.photoContainer.removeImagetoButton()
+                self.initializeImageFromButton()
             }
             
             activityViewController.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.postToFacebook,UIActivityType.postToTwitter]
             self.present(activityViewController, animated: true, completion: nil)
+        }
+    }
+    
+    // Set the original image to the button
+    private func initializeImageFromButton() {
+        for button in plusButton {
+            button.initializeImageView()
         }
     }
 }
