@@ -9,21 +9,29 @@
 import Foundation
 import UIKit
 
-// Enumeration to define the size of the button
+/// Enumeration to define the size of the button
 enum ButtonSize {
     case normal, long
 }
 
+/// Structure to configure the image button
 struct ImageButton {
     var size: ButtonSize
     var hidden: Bool
 }
 
+/// Class to handle the photo montage
 class PhotoMontage {
+    /// Number of image in the photo montage
     let imageNumber = 4
+    
+    // Actual disposition index of the photo montage
     var dispositionIndex: Int
+    
+    /// Array who contains all buttons image
     var imageButton = [ImageButton]()
     
+    /// Initialize the disposition and create all buttons
     init(disposition: Int) {
         dispositionIndex = disposition
         
@@ -32,10 +40,14 @@ class PhotoMontage {
         }
     }
     
+    /// Change the actual disposition
     func updateDisposition(_ disposition: Int) {
         dispositionIndex = disposition
     }
     
+    
+    /// Configure all button according to the disposition
+    /// - Returns: array of buttons configuration for the controller
     func refreshView() -> [ImageButton] {
         for i in 0...imageNumber-1 {
             imageButton[i].size = .normal
@@ -53,7 +65,8 @@ class PhotoMontage {
         return imageButton
     }
     
-    // Make an image with the disposition image to share it
+    /// Make an image with the photo montage view
+    /// - Returns: an image of the photo montage to share it
     func imageWithView(view: UIView) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.isOpaque, 0.0)
         view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)

@@ -8,11 +8,12 @@
 
 import UIKit
 
-// Photo button view handling
+/// Class to handle photo button view 
 class PhotoButtonView: UIButton {
     
-    /* Set the frame of the button according to the button's size
-     Animate the transition between two frame */
+    /// Set the frame of the button according to the button's size
+    /// Animate the transition between two frame
+    /// - Parameter size: button size -> normal or long
     public func setFrame(size: ButtonSize) {
         if let containerView = self.superview {
             let margin = containerView.frame.size.height * 0.05
@@ -29,7 +30,7 @@ class PhotoButtonView: UIButton {
         }
     }
     
-    // Set the original image to the button according to the device's orientation
+    /// Set the original image to the button according to the device's orientation
     public func initializeImageView() {
         if UIApplication.shared.statusBarOrientation != .portrait {
             self.setImage(#imageLiteral(resourceName: "plusGray"), for: .normal)

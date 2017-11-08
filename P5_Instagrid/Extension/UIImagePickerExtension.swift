@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-// Extension to show the image picker in the good orientation
+/// Extension to show the image picker in the good orientation
 extension UIImagePickerController
 {
     override open var shouldAutorotate: Bool {

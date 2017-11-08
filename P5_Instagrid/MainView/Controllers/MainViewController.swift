@@ -9,25 +9,25 @@
 import UIKit
 import Photos
 
-// Main view handling
+/// Class to handle the view controller
 class MainViewController: UIViewController {
     
-    // A view that contains the 4 buttons to add photos
+    /// A view that contains the 4 buttons to add photos
     @IBOutlet weak var photoContainer: UIView!
     
-    // Connexion to the storyboard for the four buttons
+    /// Connexion to the storyboard for the four buttons
     @IBOutlet var plusButton: [PhotoButtonView]!
     
-    // A collection connexion for the four image "disposition selected"
+    /// A collection connexion for the four image "disposition selected"
     @IBOutlet var dispositionSelected: [UIImageView]!
     
-    // A label to explain how you can share the image
+    /// A label to explain how you can share the image
     @IBOutlet weak var swipeLabel: UILabel!
     
-    // Create a photomontage
+    /// Create a photomontage
     let photoMontage = PhotoMontage(disposition: 2)
     
-    // Set the standard disposition when the view is loaded
+    /// Set the standard disposition when the view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,8 +37,8 @@ class MainViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     
-    /* Check if the device's orientation has changed
-     According to the current orientation change the label text and reload the current disposition */
+    /// Check if the device's orientation has changed.
+    /// According to the current orientation change the label text and reload the current disposition
     @objc func rotated() {
         if UIDevice.current.orientation.isLandscape {
             swipeLabel.text = "Swipe left to share"
@@ -49,9 +49,10 @@ class MainViewController: UIViewController {
         self.refreshView()
     }
     
-    /* Check if the user has authorized access to the library
-     Add image to the button from the user library
-     Show an alert if the authorization is denied */
+    /// Check if the user has authorized access to the library
+    /// Add image to the button from the user library
+    /// Show an alert if the authorization is denied
+    /// - Parameter sender: image button from storyboard
     @IBAction func selectPhoto(_ sender: Any) {
         guard let button = sender as? UIButton else {
             return
@@ -81,7 +82,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    // Choice the disposition of the photomontage and change the frame of the container view
+    /// Choice the disposition of the photomontage and change the frame of the container view
     @IBAction func selectDisposition(_ sender: Any) {
         guard let button = sender as? UIButton else {
             return
@@ -96,21 +97,21 @@ class MainViewController: UIViewController {
         self.refreshView()
     }
     
-    // Connexion to the storyboard to detect a swipe up and run the animation
+    /// Connexion to the storyboard to detect a swipe up and run the animation
     @IBAction func swipeUpDetected(_ sender: UISwipeGestureRecognizer) {
         if UIApplication.shared.statusBarOrientation == .portrait {
             animateView(sender.direction)
         }
     }
     
-    // Connexion to the storyboard to detect a swipe left and run the animation
+    /// Connexion to the storyboard to detect a swipe left and run the animation
     @IBAction func swipeLeftDetected(_ sender: UISwipeGestureRecognizer) {
         if UIApplication.shared.statusBarOrientation != .portrait {
             animateView(sender.direction)
         }
     }
     
-    // Resize all button to the original size and resize them according to the disposition choice
+    /// Resize all button to the original size and resize them according to the disposition choice
     private func refreshView() {
         let imageButton = photoMontage.refreshView()
 
@@ -120,7 +121,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    // Move the photocontainer outside of the screen and share the photomontage
+    /// Move the photocontainer outside of the screen and share the photomontage
     private func animateView(_ direction: UISwipeGestureRecognizerDirection) {
         let screenHeight = UIScreen.main.bounds.height
         let screenWidth = UIScreen.main.bounds.width
@@ -141,8 +142,8 @@ class MainViewController: UIViewController {
         })
     }
     
-    // Create the image from the photocontainer view and share it
-    // set up activity view controller
+    /// Create the image from the photocontainer view and share it
+    /// Set up activity view controller
     private func sharePhoto() {
         if let imageWithView = photoMontage.imageWithView(view: photoContainer) {
             let imageToShare = [imageWithView]
@@ -159,7 +160,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    // Set the original image to the button
+    /// Set the original image to the button
     private func initializeImageFromButton() {
         for button in plusButton {
             button.initializeImageView()
@@ -167,9 +168,10 @@ class MainViewController: UIViewController {
     }
 }
 
+/// Extension to add the delegate of UIImagePickerController
 extension MainViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    // Add the image to the button when the user has selected the photo
+    /// Add the image to the button when the user has selected the photo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickerImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             plusButton[picker.view.tag-10].setImage(pickerImage, for: .normal)

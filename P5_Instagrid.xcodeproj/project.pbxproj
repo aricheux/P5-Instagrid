@@ -64,13 +64,30 @@
 		710FA58E1F88254C00BB3CBF /* P5_Instagrid */ = {
 			isa = PBXGroup;
 			children = (
-				71E221991FB25E2B006D2ECC /* UIImagePickerExtension.swift */,
 				710FA58F1F88254C00BB3CBF /* AppDelegate.swift */,
 				710FA5981F88254C00BB3CBF /* LaunchScreen.storyboard */,
 				71CD55A81F8826BB005122D8 /* MainView */,
+				71411A6D1FB38981009DDAAB /* Extension */,
 				71CD55AA1F8826D3005122D8 /* Ressources */,
 			);
 			path = P5_Instagrid;
+			sourceTree = "<group>";
+		};
+		71411A6C1FB388FD009DDAAB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				710FA5931F88254C00BB3CBF /* Main.storyboard */,
+				71277C701F8CA5DD006AC630 /* PhotoButtonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71411A6D1FB38981009DDAAB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				71E221991FB25E2B006D2ECC /* UIImagePickerExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		714805EA1FA8C7D8007687D0 /* Model */ = {
@@ -84,8 +101,8 @@
 		71CD55A81F8826BB005122D8 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				710FA5931F88254C00BB3CBF /* Main.storyboard */,
 				714805EA1FA8C7D8007687D0 /* Model */,
+				71411A6C1FB388FD009DDAAB /* View */,
 				71CD55A91F8826C6005122D8 /* Controllers */,
 			);
 			path = MainView;
@@ -95,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				710FA5911F88254C00BB3CBF /* MainViewController.swift */,
-				71277C701F8CA5DD006AC630 /* PhotoButtonView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
