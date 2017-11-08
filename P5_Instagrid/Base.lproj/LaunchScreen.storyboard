@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina3_5" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <deployment version="4352" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -22,11 +22,11 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="backgroundLauch" translatesAutoresizingMaskIntoConstraints="NO" id="y4W-dH-qM0">
-                                <rect key="frame" x="-47" y="-128" width="414" height="736"/>
+                                <rect key="frame" x="-50" y="-161" width="836" height="736"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="y4W-dH-qM0" secondAttribute="height" multiplier="142:125" id="1oG-g9-4EM"/>
                                     <constraint firstAttribute="width" constant="426" id="qfQ-90-g8D"/>
@@ -45,7 +45,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjv-sB-Uvu">
-                                <rect key="frame" x="-9" y="19.5" width="338" height="60"/>
+                                <rect key="frame" x="168" y="0.0" width="400" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="M5u-Mo-cKF"/>
                                     <constraint firstAttribute="width" constant="400" id="XQR-Ig-x4Q"/>
@@ -71,7 +71,7 @@
                                 </variation>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" image="iconLauch" translatesAutoresizingMaskIntoConstraints="NO" id="IOc-gI-2ZS">
-                                <rect key="frame" x="34.5" y="114" width="251" height="252"/>
+                                <rect key="frame" x="239" y="58.666666666666657" width="258" height="258.66666666666674"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="IOc-gI-2ZS" secondAttribute="height" multiplier="251:252" id="nct-de-gpi"/>
                                 </constraints>
@@ -100,7 +100,9 @@
                             <constraint firstItem="xjv-sB-Uvu" firstAttribute="bottom" secondItem="IOc-gI-2ZS" secondAttribute="top" multiplier="0.7" id="Rj5-s6-aXy"/>
                             <constraint firstItem="IOc-gI-2ZS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Zg0-id-ikG"/>
                             <constraint firstItem="xjv-sB-Uvu" firstAttribute="bottom" secondItem="IOc-gI-2ZS" secondAttribute="top" id="Zgc-aD-kc7"/>
-                            <constraint firstItem="IOc-gI-2ZS" firstAttribute="top" secondItem="xjv-sB-Uvu" secondAttribute="bottom" multiplier="0.95" id="aU4-IE-GlW"/>
+                            <constraint firstItem="IOc-gI-2ZS" firstAttribute="top" secondItem="xjv-sB-Uvu" secondAttribute="bottom" multiplier="0.98" id="aU4-IE-GlW">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="IOc-gI-2ZS" firstAttribute="top" secondItem="xjv-sB-Uvu" secondAttribute="bottom" id="bOv-ga-BcO"/>
                             <constraint firstItem="IOc-gI-2ZS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" multiplier="0.98" id="dMm-TS-Aoh"/>
                             <constraint firstItem="IOc-gI-2ZS" firstAttribute="width" secondItem="y4W-dH-qM0" secondAttribute="height" multiplier="0.35" id="dnd-vh-NGM"/>
