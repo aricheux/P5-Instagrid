@@ -45,7 +45,6 @@ class PhotoMontage {
         dispositionIndex = disposition
     }
     
-    
     /// Configure all button according to the disposition
     /// - Returns: array of buttons configuration for the controller
     func refreshView() -> [ImageButton] {
